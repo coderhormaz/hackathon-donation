@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Registration | Urbania Welfare Community Center</title>
+  <link rel="shortcut icon" href="./assets/icecream.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-new.css" />
+  <link rel="stylesheet" href="registration-style.css" />
+  <style>
+    p {
+      font-size: medium !important;
+    }
+  </style>
+  </head>
+
+<body>
+  <div class="cursor"></div>
+  <div class="main">
+    <a href="index.html">
+      <div class="tag">
+        <span>U</span>
+        <span>R</span>
+        <span>B</span>
+        <span>A</span>
+        <span>N</span>
+        <span>I</span>
+        <span>A</span>
+      </div>
+    </a>
+    <div id="navbar">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="services.html">Services</a>
+      <a href="education.html">Education</a>
+      <a href="volunteer.html">Volunteer</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">Registration <i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="services.html#register">Services</a>
+          <a href="education.html#register">Education</a>
+          <a href="volunteer.html#register">Volunteering</a>
+        </div>
+      </div>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#donate" class="donate-btn">Donate</a>
+    </div>
+    
+    <section id="about-hero" class="about">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#volunteer">Volunteer</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Registration <i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="services.html#register">Services</a>
+            <a href="education.html#register">Education</a>
+            <a href="volunteer.html#register">Volunteering</a>
+          </div>
+        </div>
+        <a
+          class="donate"
+          href="index.html#donate"
+          ><button class="cv">Donate Now</button></a
+        >
+      </nav>
+      <div class="social">
+        <div class="linkedin">
+          <i class="fa fa-linkedin"></i>
+          <a target="_blank" href="https://www.linkedin.com/">Follow us</a>
+        </div>
+        <div class="twitter">
+          <i class="fa fa-instagram"></i>
+          <a target="_blank" href="https://www.instagram.com/">Follow us</a>
+        </div>
+        <div class="github">
+          <i class="fa fa-facebook"></i>
+          <a target="_blank" href="https://www.facebook.com/">Like us</a>
+        </div>
+        <div class="gmail">
+          <i class="fa fa-envelope"></i>
+          <a target="_blank" href="mailto:info@urbaniawelfare.org">Email us</a>
+        </div>
+      </div>
+
+      <div class="registration-container">
+        <div class="registration-header">
+          <h1>Service Registration</h1>
+          <p>Fill out the form below to register for our community services</p>
+        </div>
+
+        <div class="form-wrapper">
+          <div class="form-sidebar">
+            <div class="registration-info">
+              <div class="info-box">
+                <div class="info-icon">
+                  <i class="fa fa-info-circle"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Important Information</h3>
+                  <p>Registration is free of charge for all community members.</p>
+                  <p>Please complete all fields marked with an asterisk (*).</p>
+                  <p>Proof of identity may be required during your first visit.</p>
+                </div>
+              </div>
+              
+              <div class="info-box">
+                <div class="info-icon">
+                  <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Processing Time</h3>
+                  <p>Applications are typically processed within 2-3 business days.</p>
+                  <p>You'll receive a confirmation email once your application is reviewed.</p>
+                </div>
+              </div>
+              
+              <div class="info-box">
+                <div class="info-icon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Need Help?</h3>
+                  <p>Call us at (555) 123-4567</p>
+                  <p>Email: <a href="mailto:support@urbaniawelfare.org">support@urbaniawelfare.org</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="registration-form" style="width: auto;">
+            <form action="https://api.web3forms.com/submit" method="POST" id="serviceRegistrationForm">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+              <input type="hidden" name="subject" value="New Service Registration">
+              <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+              <div class="form-progress">
+                <div class="progress-step active" data-step="1">
+                  <span class="step-number">1</span>
+                  <span class="step-text">Personal Info</span>
+                </div>
+                <div class="progress-connector"></div>
+                <div class="progress-step" data-step="2">
+                  <span class="step-number">2</span>
+                  <span class="step-text">Service Selection</span>
+                </div>
+                <div class="progress-connector"></div>
+                <div class="progress-step" data-step="3">
+                  <span class="step-number">3</span>
+                  <span class="step-text">Additional Details</span>
+                </div>
+              </div>
+
+              <div class="form-page active" id="page1">
+                <h2>Personal Information</h2>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="firstName" name="firstName" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="lastName" name="lastName" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address">Street Address <span class="required">*</span></label>
+                  <input type="text" id="address" name="address" required>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="city">City <span class="required">*</span></label>
+                    <input type="text" id="city" name="city" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="state">State <span class="required">*</span></label>
+                    <select id="state" name="state" required>
+                      <option value="">Select State</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <!-- Add all states here -->
+                      <option value="WY">Wyoming</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="zip">ZIP Code <span class="required">*</span></label>
+                    <input type="text" id="zip" name="zip" required>
+                  </div>
+                </div>
+
+                <div class="form-buttons">
+                  <button type="button" class="next-btn">Next <i class="fa fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <div class="form-page" id="page2">
+                <h2>Service Selection</h2>
+                
+                <div class="form-group">
+                  <label>Which services are you interested in? <span class="required">*</span></label>
+                  <div class="checkbox-group">
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="foodAssistance" name="services[]" value="Food Assistance">
+                      <label for="foodAssistance">Food Assistance</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="healthServices" name="services[]" value="Health Services">
+                      <label for="healthServices">Health Services</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="housingSupport" name="services[]" value="Housing Support">
+                      <label for="housingSupport">Housing Support</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="jobTraining" name="services[]" value="Job Training">
+                      <label for="jobTraining">Job Training & Employment</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="counseling" name="services[]" value="Counseling">
+                      <label for="counseling">Counseling Services</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="seniorServices" name="services[]" value="Senior Services">
+                      <label for="seniorServices">Senior Services</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="youthPrograms" name="services[]" value="Youth Programs">
+                      <label for="youthPrograms">Youth Programs</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="legalAid" name="services[]" value="Legal Aid">
+                      <label for="legalAid">Legal Aid</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="urgency">How urgent is your need? <span class="required">*</span></label>
+                  <select id="urgency" name="urgency" required>
+                    <option value="">Select Urgency Level</option>
+                    <option value="Immediate">Immediate (within 24-48 hours)</option>
+                    <option value="Soon">Soon (within 1 week)</option>
+                    <option value="Planning">Planning Ahead (within 1 month)</option>
+                    <option value="Information">Just seeking information at this time</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="referral">How did you hear about our services?</label>
+                  <select id="referral" name="referral">
+                    <option value="">Select Option</option>
+                    <option value="Friend">Friend or Family</option>
+                    <option value="Website">Website</option>
+                    <option value="SocialMedia">Social Media</option>
+                    <option value="Community">Community Event</option>
+                    <option value="Agency">Another Agency</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-buttons">
+                  <button type="button" class="prev-btn"><i class="fa fa-arrow-left"></i> Previous</button>
+                  <button type="button" class="next-btn">Next <i class="fa fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <div class="form-page" id="page3">
+                <h2>Additional Details</h2>
+                
+                <div class="form-group">
+                  <label for="householdSize">Household Size <span class="required">*</span></label>
+                  <select id="householdSize" name="householdSize" required>
+                    <option value="">Select Option</option>
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3-4">3-4 people</option>
+                    <option value="5-6">5-6 people</option>
+                    <option value="7+">7 or more people</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="specialNeeds">Do you or any household members have special needs or requirements?</label>
+                  <textarea id="specialNeeds" name="specialNeeds" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="additionalInfo">Additional information that may help us better serve you:</label>
+                  <textarea id="additionalInfo" name="additionalInfo" rows="3"></textarea>
+                </div>
+
+                <div class="form-group checkbox-single">
+                  <input type="checkbox" id="consent" name="consent" required>
+                  <label for="consent">I consent to the collection and processing of my personal information as described in the <a href="privacy.html" target="_blank">Privacy Policy</a>. <span class="required">*</span></label>
+                </div>
+
+                <div class="form-buttons">
+                  <button type="button" class="prev-btn"><i class="fa fa-arrow-left"></i> Previous</button>
+                  <button type="submit" class="submit-btn">Submit Registration</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="newsletter-container">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with our latest events, programs, and community news</p>
+        <form action="https://api.web3forms.com/submit" method="POST" class="newsletter-form">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="Newsletter Subscription">
+          <input type="hidden" name="redirect" value="https://web3forms.com/success">
+          
+          <div class="newsletter-input">
+            <input type="email" name="email" required placeholder="Your Email Address">
+            <button type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer style="background-color: #000; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+          <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+            <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">About Urbania</h3>
+            <p style="line-height: 1.6; color: #ccc;">Urbania Welfare Community Center is dedicated to serving our community through various programs, support services, and educational initiatives.</p>
+          </div>
+          
+          <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+            <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Quick Links</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 10px;"><a href="index.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+              <li style="margin-bottom: 10px;"><a href="services.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Services</a></li>
+              <li style="margin-bottom: 10px;"><a href="events.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Events</a></li>
+              <li style="margin-bottom: 10px;"><a href="volunteer.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Volunteer</a></li>
+            </ul>
+          </div>
+          
+          <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+            <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Contact Info</h3>
+            <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-map-marker" style="margin-right: 10px;"></i> 123 Community Way, Urbania, NY 10001</p>
+            <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-phone" style="margin-right: 10px;"></i> (555) 123-4567</p>
+            <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:info@urbaniawelfare.org" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">info@urbaniawelfare.org</a></p>
+          </div>
+        </div>
+        
+        <div style="border-top: 1px solid #333; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+          <div style="margin-bottom: 15px;">
+            <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#4267B2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#E1306C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#1DA1F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0077B5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <p style="color: #ccc; font-size: 14px; margin: 0;">© <span id="currentYear">2023</span> Urbania Welfare Community Center. All rights reserved.</p>
+        </div>
+        <button onclick="scrollToTop()" id="scrollTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: #333; color: white; border: none; outline: none; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#555'" onmouseout="this.style.backgroundColor='#333'"><i class="fa fa-arrow-up"></i></button>
+      </div>
+    </footer>
+
+    <script>
+      // Update current year automatically
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Scroll to top functionality
+      let scrollTopBtn = document.getElementById("scrollTopBtn");
+      
+      window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+      
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Add hover effect to all footer links
+      const footerLinks = document.querySelectorAll('footer a');
+      footerLinks.forEach(link => {
+        link.addEventListener('mouseover', function() {
+          this.style.color = '#fff';
+        });
+        link.addEventListener('mouseout', function() {
+          this.style.color = '#ccc';
+        });
+      });
+    </script>
+    <!-- Second footer removed to fix duplicate -->
+    </div>
+  
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Form navigation logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const formPages = document.querySelectorAll('.form-page');
+      const progressSteps = document.querySelectorAll('.progress-step');
+      const nextButtons = document.querySelectorAll('.next-btn');
+      const prevButtons = document.querySelectorAll('.prev-btn');
+      
+      // Next button functionality
+      nextButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const currentPage = this.closest('.form-page');
+          const currentIndex = Array.from(formPages).indexOf(currentPage);
+          
+          // Basic validation before proceeding
+          const inputs = currentPage.querySelectorAll('input[required], select[required]');
+          let isValid = true;
+          
+          inputs.forEach(input => {
+            if (!input.value) {
+              input.classList.add('invalid');
+              isValid = false;
+            } else {
+              input.classList.remove('invalid');
+            }
+          });
+          
+          if (isValid && currentIndex < formPages.length - 1) {
+            formPages[currentIndex].classList.remove('active');
+            formPages[currentIndex + 1].classList.add('active');
+            
+            progressSteps[currentIndex].classList.add('completed');
+            progressSteps[currentIndex + 1].classList.add('active');
+            
+            // Scroll to top of form
+            document.querySelector('.registration-form').scrollTo(0, 0);
+          }
+        });
+      });
+      
+      // Previous button functionality
+      prevButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const currentPage = this.closest('.form-page');
+          const currentIndex = Array.from(formPages).indexOf(currentPage);
+          
+          if (currentIndex > 0) {
+            formPages[currentIndex].classList.remove('active');
+            formPages[currentIndex - 1].classList.add('active');
+            
+            progressSteps[currentIndex].classList.remove('active');
+            progressSteps[currentIndex - 1].classList.remove('completed');
+            
+            // Scroll to top of form
+            document.querySelector('.registration-form').scrollTo(0, 0);
+          }
+        });
+      });
+      
+      // Handle input validation on change
+      const requiredInputs = document.querySelectorAll('input[required], select[required]');
+      requiredInputs.forEach(input => {
+        input.addEventListener('change', function() {
+          if (this.value) {
+            this.classList.remove('invalid');
+          }
+        });
+      });
+      
+      // Form submission
+      document.getElementById('serviceRegistrationForm').addEventListener('submit', function(event) {
+        let isValid = true;
+        const lastPageInputs = document.querySelector('#page3').querySelectorAll('input[required], select[required]');
+        
+        lastPageInputs.forEach(input => {
+          if (!input.value) {
+            input.classList.add('invalid');
+            isValid = false;
+          }
+        });
+        
+        // Also check if at least one service is selected
+        const serviceCheckboxes = document.querySelectorAll('input[name="services[]"]:checked');
+        if (serviceCheckboxes.length === 0) {
+          document.querySelector('.checkbox-group').classList.add('invalid-group');
+          isValid = false;
+        } else {
+          document.querySelector('.checkbox-group').classList.remove('invalid-group');
+        }
+        
+        if (!isValid) {
+          event.preventDefault();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Service Events & Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & Variables */
+:root {
+    --primary-color: #4e73df;
+    --primary-light: #7a9ef8;
+    --primary-dark: #2653d4;
+    --secondary-color: #1cc88a;
+    --danger-color: #e74a3b;
+    --warning-color: #f6c23e;
+    --info-color: #36b9cc;
+    --dark-color: #5a5c69;
+    --light-color: #f8f9fc;
+    --gray-color: #d1d3e2;
+    --sidebar-width: 250px;
+    --sidebar-collapsed-width: 80px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fb;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Admin Container Layout */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    transition: all var(--transition-speed) ease;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: var(--sidebar-width);
+    background: linear-gradient(180deg, #4e73df 0%, #224abe 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    position: relative;
+}
+
+.sidebar-header {
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+}
+
+.logo i {
+    font-size: 1.75rem;
+    margin-right: 0.75rem;
+}
+
+.menu-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative;
+    margin: 0.25rem 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-nav li a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav li a i {
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-nav li a span {
+    transition: opacity var(--transition-speed) ease;
+}
+
+.sidebar-nav li.active a {
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    border-left-color: white;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all var(--transition-speed) ease;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.user-info .name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.user-info .role {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.logout-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logout-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left var(--transition-speed) ease;
+    min-height: 100vh;
+}
+
+.main-header {
+    background-color: white;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    z-index: 1;
+}
+
+.main-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--gray-color);
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    width: 200px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+    width: 250px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-color);
+}
+
+.notifications {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--dark-color);
+    transition: transform 0.2s ease;
+}
+
+.notifications:hover {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+.notifications .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-color);
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-area {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: #f5f7fb;
+}
+
+/* Dashboard Overview Styles */
+.dashboard-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    overflow: hidden;
+    display: flex;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1.5rem 0 rgba(58, 59, 69, 0.2);
+}
+
+.stat-card:hover .card-bg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.card-icon {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    z-index: 2;
+}
+
+.card-info {
+    flex: 1;
+    padding: 1.25rem;
+    z-index: 2;
+}
+
+.card-info h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    opacity: 0.8;
+}
+
+.card-info .count {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.card-bg {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.recent-activity {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.activity-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    padding: 1.5rem;
+}
+
+.activity-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.activity-list {
+    list-style: none;
+}
+
+.activity-list li {
+    display: flex;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.activity-list li:nth-child(1) { animation-delay: 0.1s; }
+.activity-list li:nth-child(2) { animation-delay: 0.2s; }
+.activity-list li:nth-child(3) { animation-delay: 0.3s; }
+.activity-list li:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+
+.activity-icon.success {
+    background-color: rgba(28, 200, 138, 0.1);
+    color: var(--secondary-color);
+}
+
+.activity-icon.warning {
+    background-color: rgba(246, 194, 62, 0.1);
+    color: var(--warning-color);
+}
+
+.activity-icon.primary {
+    background-color: rgba(78, 115, 223, 0.1);
+    color: var(--primary-color);
+}
+
+.activity-icon.info {
+    background-color: rgba(54, 185, 204, 0.1);
+    color: var(--info-color);
+}
+
+.activity-details {
+    flex: 1;
+}
+
+.activity-details p {
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.activity-details .time {
+    font-size: 0.8rem;
+    color: var(--dark-color);
+    opacity: 0.7;
+}
+
+/* Management Sections */
+.management-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+/* Button Styles */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8125rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: rgba(78, 115, 223, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: #d62c1a;
+    border-color: #d62c1a;
+    transform: translateY(-2px);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+.data-table {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    overflow: hidden;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead {
+    background-color: #f8f9fc;
+}
+
+table th {
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+table td {
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: var(--dark-color);
+    border-top: 1px solid #e3e6f0;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background-color: rgba(28, 200, 138, 0.1);
+    color: var(--secondary-color);
+}
+
+.status-badge.completed {
+    background-color: rgba(78, 115, 223, 0.1);
+    color: var(--primary-color);
+}
+
+.status-badge.upcoming {
+    background-color: rgba(246, 194, 62, 0.1);
+    color: var(--warning-color);
+}
+
+.action-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-right: 0.25rem;
+}
+
+.action-btn.edit {
+    color: var(--primary-color);
+}
+
+.action-btn.edit:hover {
+    background-color: rgba(78, 115, 223, 0.1);
+}
+
+.action-btn.delete {
+    color: var(--danger-color);
+}
+
+.action-btn.delete:hover {
+    background-color: rgba(231, 74, 59, 0.1);
+}
+
+/* Service Cards */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:not(.add-new):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1.5rem 0 rgba(58, 59, 69, 0.2);
+}
+
+.service-card:not(.add-new)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(78, 115, 223, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--dark-color);
+}
+
+.service-card p {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.service-actions {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.add-new.service-card {
+    border: 2px dashed var(--gray-color);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-new.service-card:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(78, 115, 223, 0.05);
+}
+
+.add-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(78, 115, 223, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.add-new.service-card:hover .add-icon {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Course Management */
+.course-management {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    padding: 1.5rem;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.course-item {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    transition: all 0.3s ease;
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1.5rem 0 rgba(58, 59, 69, 0.2);
+}
+
+.course-thumbnail {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.category-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.course-details {
+    padding: 1.25rem;
+}
+
+.course-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.instructor {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.course-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.course-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    min-width: 160px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: var(--primary-color);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 500px;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+}
+
+.modal-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #e3e6f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--dark-color);
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--danger-color);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e3e6f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #d1d3e2;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.file-upload {
+    position: relative;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border: 2px dashed #d1d3e2;
+    border-radius: 0.375rem;
+    background-color: #f8f9fc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.file-upload-label:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(78, 115, 223, 0.05);
+}
+
+.file-upload-label i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.file-upload-label span {
+    font-size: 0.875rem;
+    color: var(--dark-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .admin-container.sidebar-open .sidebar {
+        transform: translateX(0);
+    }
+    
+    .admin-container.sidebar-open .main-content {
+        margin-left: var(--sidebar-width);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-actions {
+        gap: 0.5rem;
+    }
+    
+    .search-box input {
+        width: 150px;
+    }
+    
+    .search-box input:focus {
+        width: 180px;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .search-box {
+        flex: 1;
+    }
+    
+    .search-box input {
+        width: 100%;
+    }
+    
+    .search-box input:focus {
+        width: 100%;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .modal-container {
+        margin: 0 1rem;
+    }
+}
+
+/* Animation Classes */
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-15px);}
+    60% {transform: translateY(-7px);}
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+}
+
+/* Utility Classes */
+.text-primary { color: var(--primary-color); }
+.text-success { color: var(--secondary-color); }
+.text-warning { color: var(--warning-color); }
+.text-danger { color: var(--danger-color); }
+.text-info { color: var(--info-color); }
+.text-dark { color: var(--dark-color); }
+.text-light { color: var(--light-color); }
+
+.bg-primary { background-color: var(--primary-color); }
+.bg-success { background-color: var(--secondary-color); }
+.bg-warning { background-color: var(--warning-color); }
+.bg-danger { background-color: var(--danger-color); }
+.bg-info { background-color: var(--info-color); }
+.bg-dark { background-color: var(--dark-color); }
+.bg-light { background-color: var(--light-color); }
+
+.shadow { box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1); }
+.shadow-lg { box-shadow: 0 0.5rem 1.5rem 0 rgba(58, 59, 69, 0.2); }
+
+.rounded { border-radius: 0.375rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-full { border-radius: 9999px; }
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Urbania Welfare Centre</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#events">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services">
+                            <i class="fas fa-concierge-bell"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#education">
+                            <i class="fas fa-book-open"></i>
+                            <span>Education</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#users">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Admin">
+                    </div>
+                    <div class="user-info">
+                        <span class="name">Sarah Johnson</span>
+                        <span class="role">Super Admin</span>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <a href="logout.html">
+                    <i class="fas fa-sign-out-alt"></i></a>
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="pageTitle">Dashboard</h1>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-area">
+                <!-- Dashboard Overview Cards -->
+                <section class="dashboard-overview" id="dashboardSection">
+                    <div class="card-grid">
+                        <div class="stat-card">
+                            <div class="card-icon" style="background-color: #4e73df;">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Total Events</h3>
+                                <span class="count" data-target="124">0</span>
+                            </div>
+                            <div class="card-bg"></div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="card-icon" style="background-color: #1cc88a;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Active Users</h3>
+                                <span class="count" data-target="856">0</span>
+                            </div>
+                            <div class="card-bg"></div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="card-icon" style="background-color: #36b9cc;">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Courses</h3>
+                                <span class="count" data-target="42">0</span>
+                            </div>
+                            <div class="card-bg"></div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="card-icon" style="background-color: #f6c23e;">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Services</h3>
+                                <span class="count" data-target="18">0</span>
+                            </div>
+                            <div class="card-bg"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <div class="activity-card">
+                            <h2>Recent Activity</h2>
+                           
+                    
+                   
+                <!-- Education Management Section -->
+                <section class="management-section" id="educationSection" style="display: none;">
+                    <div class="section-header">
+                        <h2>Education Management</h2>
+                        <div class="header-actions">
+                            <div class="dropdown">
+                                <button class="btn btn-outline dropdown-toggle" id="filterDropdown">
+                                    Filter by Category <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">All Categories</a>
+                                    <a href="#" class="dropdown-item">Programming</a>
+                                    <a href="#" class="dropdown-item">Design</a>
+                                    <a href="#" class="dropdown-item">Business</a>
+                                    <a href="#" class="dropdown-item">Science</a>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" id="addCourseBtn">
+                                <i class="fas fa-plus"></i> Add New Course
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="course-management">
+                        <div class="course-list">
+                            <div class="course-item">
+                                <div class="course-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                                    <span class="category-badge">Programming</span>
+                                </div>
+                                <div class="course-details">
+                                    <h3>Advanced JavaScript</h3>
+                                    <p class="instructor">By John Smith</p>
+                                    <div class="course-meta">
+                                        <span><i class="fas fa-users"></i> 245 Students</span>
+                                        <span><i class="fas fa-star"></i> 4.8 (120)</span>
+                                    </div>
+                                    <div class="course-actions">
+                                        <button class="btn btn-sm btn-outline">Edit</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                        <button class="btn btn-sm btn-primary">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-item">
+                                <div class="course-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80');">
+                                    <span class="category-badge">Design</span>
+                                </div>
+                                <div class="course-details">
+                                    <h3>UI/UX Fundamentals</h3>
+                                    <p class="instructor">By Sarah Johnson</p>
+                                    <div class="course-meta">
+                                        <span><i class="fas fa-users"></i> 189 Students</span>
+                                        <span><i class="fas fa-star"></i> 4.9 (95)</span>
+                                    </div>
+                                    <div class="course-actions">
+                                        <button class="btn btn-sm btn-outline">Edit</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                        <button class="btn btn-sm btn-primary">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-item">
+                                <div class="course-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                                    <span class="category-badge">Business</span>
+                                </div>
+                                <div class="course-details">
+                                    <h3>Digital Marketing Mastery</h3>
+                                    <p class="instructor">By Michael Brown</p>
+                                    <div class="course-meta">
+                                        <span><i class="fas fa-users"></i> 312 Students</span>
+                                        <span><i class="fas fa-star"></i> 4.7 (156)</span>
+                                    </div>
+                                    <div class="course-actions">
+                                        <button class="btn btn-sm btn-outline">Edit</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                        <button class="btn btn-sm btn-primary">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal for Adding Content -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add New Event</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="contentForm">
+                    <div class="form-group">
+                        <label for="contentTitle">Title</label>
+                        <input type="text" id="contentTitle" placeholder="Enter title">
+                    </div>
+                    <div class="form-group">
+                        <label for="contentDescription">Description</label>
+                        <textarea id="contentDescription" rows="3" placeholder="Enter description"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contentDate">Date</label>
+                            <input type="date" id="contentDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="contentCategory">Category</label>
+                            <select id="contentCategory">
+                                <option value="">Select category</option>
+                                <option value="event">Event</option>
+                                <option value="service">Service</option>
+                                <option value="course">Course</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contentImage">Image</label>
+                        <div class="file-upload">
+                            <input type="file" id="contentImage" accept="image/*">
+                            <label for="contentImage" class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Choose file or drag & drop here</span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modalCancel">Cancel</button>
+                <button class="btn btn-primary" id="modalSubmit">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="event.js"></script>
+</body>
+</html>

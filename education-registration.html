@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Program Registration - Urbania Welfare Community Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-new.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="main" style="background: rgba(255, 255, 255, 0.9);">
+    <a href="index.html">
+      <div class="tag">
+        <span>U</span>
+        <span>R</span>
+        <span>B</span>
+        <span>A</span>
+        <span>N</span>
+        <span>I</span>
+        <span>A</span>
+      </div>
+    </a>
+    <div id="navbar">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="services.html">Services</a>
+      <a href="education.html">Education</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#donate" class="donate-btn">Donate</a>
+    </div>
+    
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" id="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="services.html">Services</a>
+      <a href="education.html">Education</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#donate" class="donate-btn">Donate</a>
+    </div>
+    
+    <style>
+      /* Hamburger menu styles */
+      .hamburger-menu {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+      
+      .hamburger-icon {
+        width: 30px;
+        height: 25px;
+        position: relative;
+        cursor: pointer;
+      }
+      
+      .hamburger-icon span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #fff;
+        border-radius: 3px;
+        opacity: 1;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+      }
+      
+      .hamburger-icon span:nth-child(1) {
+        top: 0px;
+      }
+      
+      .hamburger-icon span:nth-child(2) {
+        top: 10px;
+      }
+      
+      .hamburger-icon span:nth-child(3) {
+        top: 20px;
+      }
+      
+      .hamburger-icon.open span:nth-child(1) {
+        top: 10px;
+        transform: rotate(135deg);
+      }
+      
+      .hamburger-icon.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+      
+      .hamburger-icon.open span:nth-child(3) {
+        top: 10px;
+        transform: rotate(-135deg);
+      }
+      
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 999;
+        padding-top: 70px;
+        transition: right 0.3s ease;
+      }
+      
+      .mobile-menu.open {
+        right: 0;
+      }
+      
+      .mobile-menu a {
+        display: block;
+        color: #fff;
+        padding: 15px 25px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+      
+      .mobile-menu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-menu .donate-btn {
+        margin: 20px 25px;
+        padding: 10px 15px;
+        background: #ff4d4d;
+        border-radius: 5px;
+        text-align: center;
+      }
+      
+      /* Media query for responsive design */
+      @media screen and (max-width: 768px) {
+        #navbar {
+      display: none;
+        }
+        
+        .hamburger-menu {
+      display: block;
+        }
+        
+        .mobile-menu {
+      display: block;
+        }
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        hamburgerIcon.addEventListener('click', function() {
+      this.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+        });
+        
+        // Close menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburgerIcon.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+        });
+      });
+    </script>
+    <section id="home" class="home">
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#events">Events</a>
+        <a href="#education">Education</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#contact">Contact</a>
+        <a
+          class="donate"
+          href="#donate"
+          ><button class="cv">Donate Now</button></a
+        >
+      </nav>
+      </section>
+      </div>
+  <main>
+    <section class="education-registration-form">
+      <div class="section-container">
+        <h1>Education Program Registration</h1>
+        <div class="border-div"></div>
+        <p class="section-description">Enroll in our educational programs designed to empower individuals of all ages with knowledge and skills for personal and professional growth.</p>
+        
+        <div class="registration-form-container">
+          <h2>Program Registration</h2>
+          <form class="registration-form" action="#" method="post">
+            <!-- Program Selection -->
+            <div class="form-field full-width">
+              <label class="required-field">Select Program</label>
+              <div class="program-selection">
+                <div class="program-option">
+                  <div class="program-option-header">
+                    <input type="radio" id="program1" name="program" value="adult-literacy">
+                    <label for="program1">Adult Literacy Program</label>
+                  </div>
+                  <p class="program-description">Basic reading, writing, and comprehension skills for adults. Classes held twice weekly.</p>
+                </div>
+                
+                <div class="program-option">
+                  <div class="program-option-header">
+                    <input type="radio" id="program2" name="program" value="digital-skills">
+                    <label for="program2">Digital Skills Workshop</label>
+                  </div>
+                  <p class="program-description">Computer basics, internet usage, email, and basic software training. Four-week program.</p>
+                </div>
+                
+                <div class="program-option">
+                  <div class="program-option-header">
+                    <input type="radio" id="program3" name="program" value="after-school">
+                    <label for="program3">After-School Tutoring (K-12)</label>
+                  </div>
+                  <p class="program-description">Homework help and subject tutoring for school-aged children. Available Monday-Thursday.</p>
+                </div>
+                
+                <div class="program-option">
+                  <div class="program-option-header">
+                    <input type="radio" id="program4" name="program" value="job-skills">
+                    <label for="program4">Job Readiness Program</label>
+                  </div>
+                  <p class="program-description">Resume writing, interview skills, job search strategies, and career counseling. Six-week program.</p>
+                </div>
+                
+                <div class="program-option">
+                  <div class="program-option-header">
+                    <input type="radio" id="program5" name="program" value="esl">
+                    <label for="program5">English as a Second Language (ESL)</label>
+                  </div>
+                  <p class="program-description">English language classes for non-native speakers. Beginning, intermediate, and advanced levels.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Session Preference -->
+            <div class="form-field">
+              <label for="session" class="required-field">Preferred Session</label>
+              <select id="session" name="session" required>
+                <option value="">Select</option>
+                <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                <option value="afternoon">Afternoon (1:00 PM - 4:00 PM)</option>
+                <option value="evening">Evening (6:00 PM - 8:30 PM)</option>
+                <option value="weekend">Weekend (Saturday 10:00 AM - 2:00 PM)</option>
+              </select>
+            </div>
+            
+            <div class="form-field">
+              <label for="startDate" class="required-field">Preferred Start Date</label>
+              <input type="date" id="startDate" name="startDate" required>
+            </div>
+            
+            <!-- Participant Information -->
+            <div class="form-field">
+              <label for="firstName" class="required-field">First Name</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="lastName" class="required-field">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="email" class="required-field">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="phone" class="required-field">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="dob" class="required-field">Date of Birth</label>
+              <input type="date" id="dob" name="dob" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non-binary">Non-binary</option>
+                <option value="prefer-not">Prefer not to say</option>
+              </select>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="address">Street Address</label>
+              <input type="text" id="address" name="address">
+            </div>
+            
+            <div class="form-field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city">
+            </div>
+            
+            <div class="form-field">
+              <label for="zipCode">Zip Code</label>
+              <input type="text" id="zipCode" name="zipCode">
+            </div>
+            
+            <!-- For child registrations -->
+            <div class="form-field full-width" id="parentInfoSection" style="display: none;">
+              <h3>Parent/Guardian Information (required for participants under 18)</h3>
+            </div>
+            
+            <div class="form-field" id="parentNameField" style="display: none;">
+              <label for="parentName" class="required-field">Parent/Guardian Name</label>
+              <input type="text" id="parentName" name="parentName">
+            </div>
+            
+            <div class="form-field" id="parentPhoneField" style="display: none;">
+              <label for="parentPhone" class="required-field">Parent/Guardian Phone</label>
+              <input type="tel" id="parentPhone" name="parentPhone">
+            </div>
+            
+            <!-- Educational Background -->
+            <div class="form-field full-width">
+              <label for="education">Highest Level of Education</label>
+              <select id="education" name="education">
+                <option value="">Select</option>
+                <option value="elementary">Elementary School</option>
+                <option value="middle">Middle School</option>
+                <option value="high">High School</option>
+                <option value="ged">GED</option>
+                <option value="some-college">Some College</option>
+                <option value="associate">Associate's Degree</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="graduate">Graduate Degree</option>
+              </select>
+            </div>
+            
+            <!-- Additional Information -->
+            <div class="form-field full-width">
+              <label for="goals">Learning Goals and Objectives</label>
+              <textarea id="goals" name="goals" placeholder="Please share what you hope to achieve through this program."></textarea>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="accommodation">Accommodations or Special Needs</label>
+              <textarea id="accommodation" name="accommodation" placeholder="Please describe any accommodations or special needs you may require."></textarea>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="referral">How did you hear about our educational programs?</label>
+              <select id="referral" name="referral">
+                <option value="">Select</option>
+                <option value="website">Website</option>
+                <option value="social">Social Media</option>
+                <option value="flyer">Flyer or Poster</option>
+                <option value="friend">Friend or Family</option>
+                <option value="school">School Referral</option>
+                <option value="partner">Partner Organization</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <!-- Agreements and Consent -->
+            <div class="form-field full-width">
+              <label>Consents and Agreements</label>
+              <div class="checkbox-grid">
+                <div class="checkbox-group">
+                  <input type="checkbox" id="photo" name="photo">
+                  <label for="photo">I consent to the use of my photograph for promotional materials.</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="updates" name="updates" checked>
+                  <label for="updates">I would like to receive updates about future programs.</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="terms" name="terms" required>
+                  <label for="terms" class="required-field">I agree to the program terms and policies.</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="emergency" name="emergency" required>
+                  <label for="emergency" class="required-field">I consent to emergency medical treatment if needed.</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-field full-width">
+              <button type="submit" class="registration-submit-btn">Submit Registration</button>
+            </div>
+          </form>
+          
+          <p class="form-info-text">Registration is subject to availability. A confirmation email will be sent once your registration is processed.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Urbania Welfare Community Center is dedicated to empowering and supporting our community through various programs and services.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Community Road, Urbania, UB 12345</p>
+        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+        <p><i class="fas fa-envelope"></i> info@urbaniawelfare.org</p>
+        <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 5:00 PM</p>
+      </div>
+    </div>
+
+    <div class="back-top">
+      <h3>Back to Top</h3>
+      <a href="#"><i class="fas fa-chevron-up"></i></a>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 Urbania Welfare Community Center. All Rights Reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      hamburgerIcon.addEventListener('click', function() {
+        this.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+      });
+      
+      // Close menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburgerIcon.classList.remove('open');
+          mobileMenu.classList.remove('open');
+        });
+      });
+    });
+    
+    // Show parent/guardian fields if participant is under 18
+    document.getElementById('dob').addEventListener('change', function() {
+      const dob = new Date(this.value);
+      const today = new Date();
+      const age = today.getFullYear() - dob.getFullYear();
+      
+      // Check if already had birthday this year
+      if (today.getMonth() < dob.getMonth() || 
+          (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())) {
+        age--;
+      }
+      
+      // If under 18, show parent fields
+      const parentFields = document.querySelectorAll('#parentInfoSection, #parentNameField, #parentPhoneField');
+      if (age < 18) {
+        parentFields.forEach(field => field.style.display = 'block');
+        document.getElementById('parentName').setAttribute('required', 'required');
+        document.getElementById('parentPhone').setAttribute('required', 'required');
+      } else {
+        parentFields.forEach(field => field.style.display = 'none');
+        document.getElementById('parentName').removeAttribute('required');
+        document.getElementById('parentPhone').removeAttribute('required');
+      }
+    });
+    
+    // Program selection highlight
+    const programOptions = document.querySelectorAll('.program-option');
+    programOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        // Trigger the radio button click
+        const radio = this.querySelector('input[type="radio"]');
+        radio.checked = true;
+        
+        // Remove highlight from all options
+        programOptions.forEach(opt => {
+          opt.style.backgroundColor = '#f9f9f9';
+          opt.style.borderColor = '#ddd';
+        });
+        
+        // Highlight the selected option
+        this.style.backgroundColor = '#f0f0f0';
+        this.style.borderColor = '#000';
+      });
+    });
+  </script>
+</body>
+</html>

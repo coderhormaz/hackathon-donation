@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Donation Portal</title>
+    <style>
+        :root {
+            --primary: #27ae60;
+            --primary-dark: #219653;
+            --secondary: #2c3e50;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 16px;
+            --blur: blur(10px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            animation: fadeIn 0.6s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), #3498db);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), #3498db);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0 1rem;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+            background: var(--white);
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            width: 100%;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+            margin: 0.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        button:hover::after {
+            transform: translateX(100%);
+        }
+
+        .qr-code {
+            max-width: 220px;
+            margin: 1.5rem auto;
+            display: block;
+            border-radius: 12px;
+            padding: 1rem;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .qr-code:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .upi-id {
+            background: rgba(232, 248, 240, 0.8);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+            margin: 1rem 0;
+            border: 1px solid rgba(39, 174, 96, 0.2);
+            transition: var(--transition);
+        }
+
+        .upi-id:hover {
+            background: rgba(232, 248, 240, 1);
+            transform: translateY(-2px);
+        }
+
+        .fallback {
+            display: none;
+            background: rgba(254, 249, 231, 0.9);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #f1c40f;
+            animation: fadeIn 0.5s ease-out;
+            border: 1px solid rgba(241, 196, 15, 0.2);
+        }
+
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1.2rem 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+            display: none;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease-out, pulse 2s infinite;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .receipt {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .receipt p {
+            margin: 0.8rem 0;
+            font-size: 1.1rem;
+        }
+
+        .receipt span {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .receipt button {
+            margin-top: 1.5rem;
+            width: auto;
+            padding: 0.8rem 1.5rem;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .notification {
+                top: 1rem;
+                right: 1rem;
+                left: 1rem;
+                text-align: center;
+            }
+            
+            .receipt button {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="notification" id="notification">
+        Payment received successfully! Receipt generated.
+    </div>
+
+    <div class="card">
+        <h2>Support Us</h2>
+        
+        <!-- Donor Information -->
+        <div>
+            <h3>Your Details</h3>
+            <input type="text" id="donorName" placeholder="Full Name">
+            <input type="email" id="donorEmail" placeholder="Email (optional)">
+            <input type="tel" id="donorPhone" placeholder="Phone (optional)">
+        </div>
+
+        <!-- Custom Amount Payment -->
+        <div>
+            <h3>Donation Amount</h3>
+            <input type="number" id="amount" placeholder="₹ Enter amount" min="1">
+            <select id="paymentType">
+                <option value="one-time">One-time Donation</option>
+                <option value="monthly">Monthly Donation</option>
+            </select>
+            <button onclick="initiateUPIPayment()">Pay via UPI</button>
+            <div id="fallback" class="fallback">
+                <p><strong>Donation Instructions:</strong></p>
+                <p>1. <strong>Scan the QR code</strong> below</p>
+                <p>2. Or send directly to:</p>
+                <div class="upi-id">ansariabdul999a.razzaq@okicici</div>
+                <p>3. After payment, <button onclick="showPaymentReceived()" style="display: inline; width: auto; padding: 0.5rem 1rem;">click here</button> to confirm</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- QR Code Payment -->
+    <div class="card">
+        <h3>Scan QR Code to Pay</h3>
+        <img src="WhatsApp Image 2025-03-28 at 10.27.36 AM.jpeg" alt="UPI QR Code" class="qr-code">
+        <p style="text-align: center;">Scan with any UPI app</p>
+        
+        <!-- Quick Payment Button -->
+        <button onclick="initiateFixedPayment()">Quick Pay ₹100</button>
+    </div>
+
+    <!-- Receipt Section -->
+    <div class="card receipt" id="receipt">
+        <h3>Donation Receipt</h3>
+        <p><strong>Transaction ID:</strong> <span id="receipt-txnid">UPI123456789</span></p>
+        <p><strong>Date:</strong> <span id="receipt-date">28 March 2025</span></p>
+        <p><strong>Amount:</strong> ₹<span id="receipt-amount">100</span></p>
+        <p><strong>Donor Name:</strong> <span id="receipt-name">Anonymous</span></p>
+        <p><strong>Payment Type:</strong> <span id="receipt-type">One-time</span></p>
+        <button onclick="printReceipt()">Print Receipt</button>
+        <button onclick="sendReceipt()">Email Receipt</button>
+    </div>
+
+    <script>
+    // Payment functions with YOUR UPI details
+    const yourUPI = {
+        id: "ansariabdul999a.razzaq@okicici",
+        name: "Abdul Razzaq",
+        note: "Donation"
+    };
+
+    function initiateUPIPayment() {
+        const amount = document.getElementById('amount').value;
+        if (!amount || amount < 1) return alert("Please enter valid amount");
+        
+        // Get donor details
+        const donorName = document.getElementById('donorName').value || "Anonymous";
+        const paymentType = document.getElementById('paymentType').value;
+        
+        // Create payment note
+        const note = `${paymentType === 'monthly' ? 'Monthly ' : ''}Donation from ${donorName}`;
+        
+        openUPI(amount, note);
+    }
+
+    function initiateFixedPayment() {
+        const donorName = document.getElementById('donorName').value || "Anonymous";
+        openUPI(100, `Quick Donation from ${donorName}`);
+    }
+
+    function openUPI(amount, note) {
+        // Properly encoded UPI URL
+        const upiUrl = `upi://pay?pa=${yourUPI.id}&pn=${encodeURIComponent(yourUPI.name)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
+        
+        // Try opening UPI app
+        window.location.href = upiUrl;
+        
+        // Fallback if UPI app not found (after 500ms)
+        setTimeout(() => {
+            if (!document.hidden) {
+                document.getElementById('fallback').style.display = 'block';
+            }
+        }, 500);
+    }
+
+    function showPaymentReceived() {
+        // Show notification
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 5000);
+        
+        // Generate receipt
+        generateReceipt();
+    }
+
+    function generateReceipt() {
+        const receipt = document.getElementById('receipt');
+        const now = new Date();
+        
+        // Fill receipt details
+        document.getElementById('receipt-txnid').textContent = 'UPI' + Math.floor(Math.random() * 1000000000);
+        document.getElementById('receipt-date').textContent = now.toLocaleDateString('en-IN');
+        document.getElementById('receipt-amount').textContent = document.getElementById('amount').value || '100';
+        document.getElementById('receipt-name').textContent = document.getElementById('donorName').value || 'Anonymous';
+        document.getElementById('receipt-type').textContent = 
+            document.getElementById('paymentType').value === 'monthly' ? 'Monthly' : 'One-time';
+        
+        // Show receipt
+        receipt.style.display = 'block';
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    }
+
+    function printReceipt() {
+        window.print();
+    }
+
+    function sendReceipt() {
+        const email = document.getElementById('donorEmail').value;
+        if (email) {
+            alert(`Receipt will be sent to ${email} (simulated in demo)`);
+        } else {
+            alert("Please enter your email address to receive the receipt");
+        }
+    }
+
+    // Auto-confirm for demo purposes (remove in production)
+    if (window.location.search.includes('demo=1')) {
+        setTimeout(showPaymentReceived, 3000);
+    }
+    </script>
+    
+</body>
+</html>

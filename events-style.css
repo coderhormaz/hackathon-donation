@@ -1,0 +1,222 @@
+/* Events Page Specific Styling */
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.event {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 15px 25px;
+  min-width: 100px;
+}
+
+.event-date h3 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.event-date p {
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.event-details {
+  padding: 20px;
+  flex: 1;
+}
+
+.event-details h3 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.event-details p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.9rem; /* Decreased paragraph font size */
+}
+
+.time-location {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.time-location i {
+  margin-right: 5px;
+  color: #000;
+}
+
+.register-btn {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #333;
+}
+
+/* Filter section styling */
+.events-filter {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.events-filter h3 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #222;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.filter-group select:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.filter-button {
+  background-color: #000;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.filter-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+/* Host your event section */
+.host-event-section {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  padding: 50px 40px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 60px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.host-event-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.host-event-section p {
+  color: #444;
+  font-size: 1rem; /* Decreased from 1.15rem */
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 35px;
+}
+
+.host-event-button {
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  padding: 14px 35px;
+  border-radius: 30px;
+  display: inline-block;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid #000;
+}
+
+.host-event-button:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .event {
+    flex-direction: column;
+  }
+  
+  .event-date {
+    padding: 10px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    min-width: auto;
+  }
+  
+  .event-date h3 {
+    font-size: 1.5rem;
+  }
+  
+  .events-layout {
+    flex-direction: column;
+  }
+  
+  .events-layout > div:nth-child(2) {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+P{
+    font-size: small;
+}

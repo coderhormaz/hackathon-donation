@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Urbania Welfare Community Center</title>
+  <link rel="shortcut icon" href="./assets/icecream.png" type="image/x-icon" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-new.css" />
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="main">
+    <a href="index.html">
+      <div class="tag">
+        <span>U</span>
+        <span>R</span>
+        <span>B</span>
+        <span>A</span>
+        <span>N</span>
+        <span>I</span>
+        <span>A</span>
+      </div>
+    </a>
+    <div id="navbar">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="services.html">Services</a>
+      <a href="education.html">Education</a>
+      <a href="volunteer.html">Volunteer</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">Registration <i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="services.html#register">Services</a>
+          <a href="education.html#register">Education</a>
+          <a href="volunteer.html#register">Volunteering</a>
+        </div>
+      </div>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#donate" class="donate-btn">Donate</a>
+    </div>
+    
+    <section id="about-hero" class="about">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#volunteer">Volunteer</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Registration <i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="services.html#register">Services</a>
+            <a href="education.html#register">Education</a>
+            <a href="volunteer.html#register">Volunteering</a>
+          </div>
+        </div>
+        <a
+          class="donate"
+          href="index.html#donate"
+          ><button class="cv">Donate Now</button></a
+        >
+      </nav>
+      
+      <div class="social">
+        <div class="linkedin">
+          <i class="fa fa-linkedin"></i>
+          <a target="_blank" href="https://www.linkedin.com/">Follow us</a>
+        </div>
+        <div class="twitter">
+          <i class="fa fa-instagram"></i>
+          <a target="_blank" href="https://www.instagram.com/">Follow us</a>
+        </div>
+        <div class="github">
+          <i class="fa fa-facebook"></i>
+          <a target="_blank" href="https://www.facebook.com/">Like us</a>
+        </div>
+        <div class="gmail">
+          <i class="fa fa-envelope"></i>
+          <a target="_blank" href="mailto:info@urbaniawelfare.org">Email us</a>
+        </div>
+      </div>
+      
+      <div class="upper-text">
+        <h3 class="gallery-title">PHOTO GALLERY</h3>
+        <style>
+          .gallery-title {
+            text-align: center;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+          }
+          
+          .gallery-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 350px;
+            height: 4px;
+            background: black;
+            border-radius: 2px;
+          }
+        </style>
+      </div>
+
+      
+      <div class="gallery-container">
+        <div class="gallery-intro">
+          <h1>Photos from Our Community Events</h1>
+          <p>Browse through our collection of photos showcasing the impactful events and programs at Urbania Welfare Community Center. These images capture the spirit of our community and the positive change we create together.</p>
+        </div>
+        
+        <div class="gallery-categories">
+          <button class="gallery-filter active" data-filter="all">All</button>
+          <button class="gallery-filter" data-filter="health">Health</button>
+          <button class="gallery-filter" data-filter="education">Education</button>
+          <button class="gallery-filter" data-filter="food">Food</button>
+          <button class="gallery-filter" data-filter="community">Community</button>
+          <button class="gallery-filter" data-filter="volunteer">Volunteer</button>
+        </div>
+        
+        <div class="gallery-full-grid">
+          <!-- Gallery items will be populated here -->
+          <div class="gallery-full-item" data-category="health">
+            <img src="https://memorialregionalhealth.com/wp-content/uploads/3633-Health-Fair_website-image.jpg
+            " alt="Community Health Fair">
+            <div class="gallery-item-info">
+              <h3>Community Health Fair</h3>
+              <p>Free health screenings and wellness workshops for the community.</p>
+            </div>
+          </div>
+          
+          <div class="gallery-full-item" data-category="education">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2T92ougmgKEzsiNiSAeoJDboEMJB4lqAwQ&s" alt="Summer Youth Program">
+            <div class="gallery-item-info">
+              <h3>Summer Youth Program</h3>
+              <p>Educational and recreational activities for youth during summer break.</p>
+            </div>
+          </div>
+          
+          <div class="gallery-full-item" data-category="health">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGGVk_JQ_xuL7xgz077-lQScFktgncb4Klnw&s" alt="Senior Wellness Day">
+            <div class="gallery-item-info">
+              <h3>Senior Wellness Day</h3>
+              <p>Health and wellness activities tailored for our senior community members.</p>
+            </div>
+          </div>
+          
+          <div class="gallery-full-item" data-category="community">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LGpukuQYiBppYx2VI4_T7RoEw3tO7ArAeQ&s" alt="Neighborhood Cleanup">
+            <div class="gallery-item-info">
+              <h3>Neighborhood Cleanup</h3>
+              <p>Community members working together to beautify our neighborhood.</p>
+            </div>
+          </div>
+          
+          <div class="gallery-full-item" data-category="food">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0JTSTx96V2NMnVyC3COogvwj3XOVS0RuvuA&s" alt="Holiday Food Drive">
+            <div class="gallery-item-info">
+              <h3>Holiday Food Drive</h3>
+              <p>Collecting and distributing food to families during the holiday season.</p>
+            </div>
+          </div>
+          
+          <div class="gallery-full-item" data-category="community">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO6BUfVHYwMJxf2sPj_IPjCTwUOZiZlu0LIw&s" alt="Cultural Celebration">
+            <div class="gallery-item-info">
+              <h3>Cultural Celebration</h3>
+              <p>Celebrating the diverse cultures in our community with performances and food.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="newsletter">
+      <div class="newsletter-container">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with our latest events, programs, and community news</p>
+        <form action="https://api.web3forms.com/submit" method="POST" class="newsletter-form">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="Newsletter Subscription">
+          <input type="hidden" name="redirect" value="https://web3forms.com/success">
+          
+          <div class="newsletter-input">
+            <input type="email" name="email" required placeholder="Your Email Address">
+            <button type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    
+    <footer style="background-color: #000; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+          <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+            <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">About Urbania</h3>
+            <p style="line-height: 1.6; color: #ccc;">Urbania Welfare Community Center is dedicated to serving our community through various programs, support services, and educational initiatives.</p>
+          </div>
+          
+          <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+            <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Quick Links</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 10px;"><a href="index.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+              <li style="margin-bottom: 10px;"><a href="services.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Services</a></li>
+              <li style="margin-bottom: 10px;"><a href="events.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Events</a></li>
+              <li style="margin-bottom: 10px;"><a href="volunteer.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Volunteer</a></li>
+            </ul>
+          </div>
+          
+          <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+            <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Contact Info</h3>
+            <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-map-marker" style="margin-right: 10px;"></i> 123 Community Way, Urbania, NY 10001</p>
+            <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-phone" style="margin-right: 10px;"></i> (555) 123-4567</p>
+            <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:info@urbaniawelfare.org" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">info@urbaniawelfare.org</a></p>
+          </div>
+        </div>
+        
+        <div style="border-top: 1px solid #333; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+          <div style="margin-bottom: 15px;">
+            <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#4267B2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#E1306C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#1DA1F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0077B5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <p style="color: #ccc; font-size: 14px; margin: 0;">© <span id="currentYear">2023</span> Urbania Welfare Community Center. All rights reserved.</p>
+        </div>
+        <button onclick="scrollToTop()" id="scrollTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: #333; color: white; border: none; outline: none; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#555'" onmouseout="this.style.backgroundColor='#333'"><i class="fa fa-arrow-up"></i></button>
+      </div>
+    </footer>
+
+    <script>
+      // Update current year automatically
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Scroll to top functionality
+      let scrollTopBtn = document.getElementById("scrollTopBtn");
+      
+      window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+      
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Add hover effect to all footer links
+      const footerLinks = document.querySelectorAll('footer a');
+      footerLinks.forEach(link => {
+        link.addEventListener('mouseover', function() {
+          this.style.color = '#fff';
+        });
+        link.addEventListener('mouseout', function() {
+          this.style.color = '#ccc';
+        });
+      });
+    </script>
+    <!-- Second footer removed to fix duplicate -->
+    </div>
+  </div>
+  
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+    integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="script.js"></script>
+  
+  <script>
+    // Gallery filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.gallery-filter');
+      const galleryItems = document.querySelectorAll('.gallery-full-item');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const filterValue = this.getAttribute('data-filter');
+          
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter gallery items
+          galleryItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

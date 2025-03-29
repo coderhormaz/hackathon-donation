@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Payment</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-light: rgba(37, 99, 235, 0.1);
+            --yes-btn: linear-gradient(white); /* Green gradient */
+            --yes-btn-hover: linear-gradient(white); /* Darker green */
+            --no-btn: linear-gradient(black); /* Red gradient */
+            --no-btn-hover: linear-gradient(black); /* Darker red */
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --border-hover: #cbd5e1;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --backdrop: blur(8px);
+            --radius-sm: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.25rem;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .payment-form {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            width: 100%;
+            backdrop-filter: var(--backdrop);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(0);
+            transition: var(--transition);
+        }
+        
+        .payment-form:hover {
+            box-shadow: var(--shadow-xl), 0 0 20px rgba(37, 99, 235, 0.1);
+        }
+        
+        h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-align: center;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), rgba(37, 99, 235, 0.5));
+            border-radius: 2px;
+            margin: 0.75rem auto 0;
+            opacity: 0.8;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+        
+        input[type="text"], 
+        input[type="email"], 
+        input[type="tel"] {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            box-sizing: border-box;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        input[type="text"]:focus, 
+        input[type="email"]:focus, 
+        input[type="tel"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+            background-color: white;
+            transform: translateY(-1px);
+        }
+        
+        input[type="text"]:hover, 
+        input[type="email"]:hover, 
+        input[type="tel"]:hover {
+            border-color: var(--border-hover);
+        }
+        
+        .chain-options {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        
+        .chain-option {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .chain-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05));
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .chain-option:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+        
+        .chain-option.selected {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 1px var(--primary), var(--shadow-sm);
+            background-color: white;
+        }
+        
+        .chain-option.selected::before {
+            opacity: 1;
+        }
+        
+        .chain-logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-right: 1rem;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: white;
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+        
+        .chain-option.selected .chain-logo {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+        }
+        
+        .chain-logo img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+        
+        .chain-option.selected .chain-logo img {
+            transform: scale(1.1);
+        }
+        
+        .chain-info {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .chain-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+        
+        .chain-option.selected .chain-name {
+            color: var(--primary);
+        }
+        
+        .chain-symbol {
+            color: var(--text-light);
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .chain-option.selected .chain-symbol {
+            color: var(--primary);
+        }
+        
+        .qr-container {
+            margin: 2rem 0;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .qr-placeholder {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto;
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .qr-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 45%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0) 55%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+        
+        .qr-placeholder:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .qr-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+        
+        .qr-placeholder:hover img {
+            transform: scale(1.02);
+        }
+        
+        .payment-address {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: var(--bg);
+            border-radius: var(--radius-sm);
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            word-break: break-all;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .payment-address::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--yes-btn));
+            opacity: 0.7;
+        }
+        
+        .payment-address:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+            border-color: var(--primary);
+        }
+        
+        .payment-confirmation {
+            margin: 2rem 0;
+            display: none;
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            backdrop-filter: var(--backdrop);
+        }
+        
+        .payment-confirmation p {
+            margin: 0 0 1rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .confirmation-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+        
+        .confirmation-button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            color: white;
+            z-index: 1;
+        }
+        
+        .confirmation-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            z-index: -1;
+            border-radius: inherit;
+        }
+        
+        .confirmation-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .confirmation-button:hover::after {
+            opacity: 1;
+        }
+        
+        .confirmation-button:active {
+            transform: translateY(1px);
+        }
+        
+        .yes-btn {
+            background: var(--yes-btn);
+        }
+        
+        .yes-btn:hover {
+            background: var(--yes-btn-hover);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+        
+        .no-btn {
+            background: var(--no-btn);
+        }
+        
+        .no-btn:hover {
+            background: var(--no-btn-hover);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 1rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary-hover);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .submit-btn:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-30%, -30%); }
+            100% { transform: rotate(30deg) translate(30%, 30%); }
+        }
+        
+        /* Floating animation for the form */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .payment-form {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Pulse animation for selected chain */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+        }
+        
+        .chain-option.selected {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-form">
+        <h2>Crypto Payment</h2>
+        
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Select Payment Chain</label>
+            <div class="chain-options">
+                <div class="chain-option" data-chain="ETH">
+                    <div class="chain-logo">
+                        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum">
+                    </div>
+                    <div class="chain-info">
+                        <span class="chain-name">Ethereum</span>
+                        <span class="chain-symbol">ETH</span>
+                    </div>
+                </div>
+                <div class="chain-option" data-chain="BSC">
+                    <div class="chain-logo">
+                        <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="Binance Smart Chain">
+                    </div>
+                    <div class="chain-info">
+                        <span class="chain-name">Binance Smart Chain</span>
+                        <span class="chain-symbol">BSC</span>
+                    </div>
+                </div>
+                <div class="chain-option" data-chain="ARB">
+                    <div class="chain-logo">
+                        <img src="https://cryptologos.cc/logos/arbitrum-arb-logo.png" alt="Arbitrum">
+                    </div>
+                    <div class="chain-info">
+                        <span class="chain-name">Arbitrum One</span>
+                        <span class="chain-symbol">ARB</span>
+                    </div>
+                </div>
+                <div class="chain-option" data-chain="OPT">
+                    <div class="chain-logo">
+                        <img src="op.png" alt="Optimism">
+                    </div>
+                    <div class="chain-info">
+                        <span class="chain-name">Optimism</span>
+                        <span class="chain-symbol">OP</span>
+                    </div>
+                </div>
+                <div class="chain-option" data-chain="SOL">
+                    <div class="chain-logo">
+                        <img src="data:image/png;base64,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" alt="Bitcoin">
+                    </div>
+                    <div class="chain-info">
+                        <span class="chain-name">Binanace Smart Chain </span>
+                        <span class="chain-symbol">BTC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="qr-container" id="qrContainer">
+            <p>Scan this QR code to make payment</p>
+            <div class="qr-placeholder">
+                <!-- You'll replace this with your actual QR image -->
+                <img id="qrImage" src="qr1.png" alt="QR Code Placeholder">
+            </div>
+            <div class="payment-address" id="paymentAddress"></div>
+        </div>
+        
+        <div class="payment-confirmation" id="paymentConfirmation">
+            <p>Have you completed the payment?</p>
+            <div class="confirmation-buttons">
+                <button class="confirmation-button yes-btn" id="yesBtn" style="background-color: black;" >Yes</button>
+                <button class="confirmation-button no-btn" id="noBtn"style="background-color: white; color: black;" >No</button>
+            </div>
+        </div>
+        
+        <button class="submit-btn" id="submitBtn" disabled>Submit Payment</button>
+    </div>
+
+    <script>
+        // Chain selection
+        const chainOptions = document.querySelectorAll('.chain-option');
+        const qrContainer = document.getElementById('qrContainer');
+        const paymentConfirmation = document.getElementById('paymentConfirmation');
+        const submitBtn = document.getElementById('submitBtn');
+        const paymentAddress = document.getElementById('paymentAddress');
+        
+        // Sample wallet addresses for each chain (replace with your actual addresses)
+        const walletAddresses = {
+            'ETH': '0x528f1b8266db68718d789070bc0c096bbebcd63b',
+            'BSC': '0x528f1b8266db68718d789070bc0c096bbebcd63b',
+            'ARB': '0x528f1b8266db68718d789070bc0c096bbebcd63b',
+            'OPT': '0x528f1b8266db68718d789070bc0c096bbebcd63b',
+            'BTCB': '0x528f1b8266db68718d789070bc0c096bbebcd63b'
+        };
+        
+        chainOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                chainOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Get selected chain
+                const selectedChain = this.getAttribute('data-chain');
+                
+                // Update payment address display
+                paymentAddress.textContent = walletAddresses[selectedChain];
+                
+                // Show QR container
+                qrContainer.style.display = 'block';
+                
+                // Show payment confirmation
+                paymentConfirmation.style.display = 'block';
+                
+                // Reset submit button
+                submitBtn.disabled = true;
+            });
+        });
+        
+        // Payment confirmation
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        
+        yesBtn.addEventListener('click', function() {
+            submitBtn.disabled = false;
+        });
+        
+        noBtn.addEventListener('click', function() {
+            submitBtn.disabled = true;
+        });
+        
+        // Form submission
+        submitBtn.addEventListener('click', function() {
+            alert('Payment submitted successfully!');
+            // Here you would typically send the form data to your server
+        });
+    </script>
+</body>
+</html>

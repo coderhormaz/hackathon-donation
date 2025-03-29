@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration - Urbania Welfare Community Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-new.css">
+</head>
+<body>
+  <!-- Header -->
+  <body oncontextmenu="return false">
+
+    
+    <div class="main" style="background: rgba(255, 255, 255, 0.9);">
+      <a href="index.html">
+        <div class="tag">
+          <span>U</span>
+          <span>R</span>
+          <span>B</span>
+          <span>A</span>
+          <span>N</span>
+          <span>I</span>
+          <span>A</span>
+        </div>
+      </a>
+      <div id="navbar">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="services.html">Services</a>
+        <a href="education.html">Education</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#donate" class="donate-btn">Donate</a>
+      </div>
+      
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" id="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="services.html">Services</a>
+        <a href="education.html">Education</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#donate" class="donate-btn">Donate</a>
+      </div>
+      
+      <style>
+        /* Hamburger menu styles */
+        .hamburger-menu {
+          display: none;
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          z-index: 1000;
+        }
+        
+        .hamburger-icon {
+          width: 30px;
+          height: 25px;
+          position: relative;
+          cursor: pointer;
+        }
+        
+        .hamburger-icon span {
+          display: block;
+          position: absolute;
+          height: 3px;
+          width: 100%;
+          background: #fff;
+          border-radius: 3px;
+          opacity: 1;
+          transform: rotate(0deg);
+          transition: .25s ease-in-out;
+        }
+        
+        .hamburger-icon span:nth-child(1) {
+          top: 0px;
+        }
+        
+        .hamburger-icon span:nth-child(2) {
+          top: 10px;
+        }
+        
+        .hamburger-icon span:nth-child(3) {
+          top: 20px;
+        }
+        
+        .hamburger-icon.open span:nth-child(1) {
+          top: 10px;
+          transform: rotate(135deg);
+        }
+        
+        .hamburger-icon.open span:nth-child(2) {
+          opacity: 0;
+          left: -60px;
+        }
+        
+        .hamburger-icon.open span:nth-child(3) {
+          top: 10px;
+          transform: rotate(-135deg);
+        }
+        
+        .mobile-menu {
+          display: none;
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 250px;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.95);
+          z-index: 999;
+          padding-top: 70px;
+          transition: right 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+          right: 0;
+        }
+        
+        .mobile-menu a {
+          display: block;
+          color: #fff;
+          padding: 15px 25px;
+          text-decoration: none;
+          font-size: 18px;
+          transition: 0.3s;
+        }
+        
+        .mobile-menu a:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-menu .donate-btn {
+          margin: 20px 25px;
+          padding: 10px 15px;
+          background: #ff4d4d;
+          border-radius: 5px;
+          text-align: center;
+        }
+        
+        /* Media query for responsive design */
+        @media screen and (max-width: 768px) {
+          #navbar {
+        display: none;
+          }
+          
+          .hamburger-menu {
+        display: block;
+          }
+          
+          .mobile-menu {
+        display: block;
+          }
+        }
+      </style>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const hamburgerIcon = document.getElementById('hamburger-icon');
+          const mobileMenu = document.getElementById('mobile-menu');
+          
+          hamburgerIcon.addEventListener('click', function() {
+        this.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+          });
+          
+          // Close menu when clicking a link
+          const mobileLinks = mobileMenu.querySelectorAll('a');
+          mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburgerIcon.classList.remove('open');
+          mobileMenu.classList.remove('open');
+        });
+          });
+        });
+      </script>
+      <section id="home" class="home">
+        <nav>
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#events">Events</a>
+          <a href="#education">Education</a>
+          <a href="#volunteer">Volunteer</a>
+          <a href="#contact">Contact</a>
+          <a
+            class="donate"
+            href="#donate"
+            ><button class="cv">Donate Now</button></a
+          >
+        </nav>
+        </section>
+        </div>
+  <main>
+    <section class="event-registration-form">
+      <div class="section-container">
+        <h1>Event Registration</h1>
+        <div class="border-div"></div>
+        <p class="section-description">Please fill out the form below to register for our upcoming event. All fields marked with an asterisk (*) are required.</p>
+        
+        <div class="registration-form-container">
+          <div class="event-details-summary">
+            <h3>Community Health Awareness Day</h3>
+            <p><i class="far fa-calendar-alt"></i> Sunday, October 15, 2023</p>
+            <p><i class="far fa-clock"></i> 10:00 AM - 4:00 PM</p>
+            <p><i class="fas fa-map-marker-alt"></i> Urbania Community Center, Main Hall</p>
+            <p><i class="fas fa-info-circle"></i> Free health screenings, wellness workshops, and nutrition consultations. Limited spots available.</p>
+          </div>
+          
+          <h2>Registration Information</h2>
+          <form class="registration-form" action="#" method="post">
+            <div class="form-field">
+              <label for="firstName" class="required-field">First Name</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="lastName" class="required-field">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="email" class="required-field">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="phone" class="required-field">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="address">Street Address</label>
+              <input type="text" id="address" name="address">
+            </div>
+            
+            <div class="form-field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city">
+            </div>
+            
+            <div class="form-field">
+              <label for="zipCode">Zip Code</label>
+              <input type="text" id="zipCode" name="zipCode">
+            </div>
+            
+            <div class="form-field">
+              <label for="numAttendees" class="required-field">Number of Attendees</label>
+              <select id="numAttendees" name="numAttendees" required>
+                <option value="">Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5 or more</option>
+              </select>
+            </div>
+            
+            <div class="form-field">
+              <label for="workshopInterest" class="required-field">Preferred Workshop</label>
+              <select id="workshopInterest" name="workshopInterest" required>
+                <option value="">Select a Workshop</option>
+                <option value="nutrition">Nutrition Basics</option>
+                <option value="stress">Stress Management</option>
+                <option value="fitness">Fitness for All Ages</option>
+                <option value="heart">Heart Health</option>
+                <option value="screenings">Health Screenings Only</option>
+              </select>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="dietaryRestrictions">Dietary Restrictions or Allergies</label>
+              <textarea id="dietaryRestrictions" name="dietaryRestrictions"></textarea>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="questions">Questions or Special Requests</label>
+              <textarea id="questions" name="questions"></textarea>
+            </div>
+            
+            <div class="form-field full-width">
+              <div class="checkbox-group">
+                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                <label for="newsletter">I would like to receive newsletters and updates about future events.</label>
+              </div>
+            </div>
+            
+            <div class="form-field full-width">
+              <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" class="required-field">I agree to the terms and conditions.</label>
+              </div>
+            </div>
+            
+            <!-- Agreements and Consent -->
+            <div class="form-field full-width">
+              <label>Consents and Agreements</label>
+              <div class="checkbox-grid">
+                <div class="checkbox-group">
+                  <input type="checkbox" id="photo" name="photo">
+                  <label for="photo">I consent to being photographed at the event</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="newsletter" name="newsletter" checked>
+                  <label for="newsletter">Receive updates about future events</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="emergency" name="emergency" required>
+                  <label for="emergency" class="required-field">I consent to emergency medical treatment if needed</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="terms" name="terms" required>
+                  <label for="terms" class="required-field">I agree to the event terms and conditions</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-field full-width">
+              <button type="submit" class="registration-submit-btn">Register for Event</button>
+            </div>
+          </form>
+          
+          <p class="form-info-text">For any questions, please contact us at events@urbaniawelfare.org or call (555) 123-4567</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #000; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+          <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">About Urbania</h3>
+          <p style="line-height: 1.6; color: #ccc;">Urbania Welfare Community Center is dedicated to serving our community through various programs, support services, and educational initiatives.</p>
+        </div>
+        
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+          <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Quick Links</h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 10px;"><a href="index.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+            <li style="margin-bottom: 10px;"><a href="services.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Services</a></li>
+            <li style="margin-bottom: 10px;"><a href="events.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Events</a></li>
+            <li style="margin-bottom: 10px;"><a href="volunteer.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Volunteer</a></li>
+          </ul>
+        </div>
+        
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+          <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Contact Info</h3>
+          <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-map-marker" style="margin-right: 10px;"></i> 123 Community Way, Urbania, NY 10001</p>
+          <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-phone" style="margin-right: 10px;"></i> (555) 123-4567</p>
+          <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:info@urbaniawelfare.org" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">info@urbaniawelfare.org</a></p>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid #333; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <div style="margin-bottom: 15px;">
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#4267B2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#E1306C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#1DA1F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0077B5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <p style="color: #ccc; font-size: 14px; margin: 0;">© <span id="currentYear">2023</span> Urbania Welfare Community Center. All rights reserved.</p>
+      </div>
+      <button onclick="scrollToTop()" id="scrollTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: #333; color: white; border: none; outline: none; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#555'" onmouseout="this.style.backgroundColor='#333'"><i class="fa fa-arrow-up"></i></button>
+    </div>
+  </footer>
+
+  <script>
+    // Update current year automatically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Scroll to top functionality
+    let scrollTopBtn = document.getElementById("scrollTopBtn");
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Add hover effect to all footer links
+    const footerLinks = document.querySelectorAll('footer a');
+    footerLinks.forEach(link => {
+      link.addEventListener('mouseover', function() {
+        this.style.color = '#fff';
+      });
+      link.addEventListener('mouseout', function() {
+        this.style.color = '#ccc';
+      });
+    });
+  </script>
+  <!-- Second footer removed to fix duplicate -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      hamburgerIcon.addEventListener('click', function() {
+        this.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+      });
+      
+      // Close menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburgerIcon.classList.remove('open');
+          mobileMenu.classList.remove('open');
+        });
+      });
+    });
+    
+    // Program selection highlight if you have program options
+    const programOptions = document.querySelectorAll('.program-option');
+    if (programOptions.length > 0) {
+      programOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          // Trigger the radio button click
+          const radio = this.querySelector('input[type="radio"]');
+          radio.checked = true;
+          
+          // Remove highlight from all options
+          programOptions.forEach(opt => {
+            opt.style.backgroundColor = '#f9f9f9';
+            opt.style.borderColor = '#ddd';
+          });
+          
+          // Highlight the selected option
+          this.style.backgroundColor = '#f0f0f0';
+          this.style.borderColor = '#000';
+        });
+      });
+    }
+  </script>
+</body>
+</html>

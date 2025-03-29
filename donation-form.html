@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Form - Urbania Welfare Community Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-new.css">
+</head>
+<body>
+  <div id="navbar">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="services.html">Services</a>
+    <a href="education.html">Education</a>
+    <a href="volunteer.html">Volunteer</a>
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle">Registration <i class="fa fa-caret-down"></i></a>
+      <div class="dropdown-content">
+        <a href="services.html#register">Services</a>
+        <a href="education.html#register">Education</a>
+        <a href="volunteer.html#register">Volunteering</a>
+      </div>
+    </div>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html#donate" class="donate-btn">Donate</a>
+  </div>
+  
+  <section id="about-hero" class="about">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#education">Education</a>
+      <a href="index.html#volunteer">Volunteer</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">Registration <i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="services.html#register">Services</a>
+          <a href="education.html#register">Education</a>
+          <a href="volunteer.html#register">Volunteering</a>
+        </div>
+      </div>
+      <a
+        class="donate"
+        href="index.html#donate"
+        ><button class="cv">Donate Now</button></a
+      >
+    </nav>
+    
+  <main>
+    <section class="donation-registration-form">
+      <div class="section-container">
+        <h1>Make a Donation</h1>
+      
+        <p class="section-description">Your generosity helps us continue our mission of supporting and empowering our community. Every donation, big or small, makes a difference.</p>
+        
+        <div class="registration-form-container">
+          <h2>Donation Information</h2>
+          <form class="registration-form" action="#" method="post">
+            <!-- Donation Amount Options -->
+            <div class="form-field full-width">
+              <label for="donationAmount" class="required-field">Select Donation Amount</label>
+              <div class="donation-options">
+                <div class="donation-amount" onclick="selectAmount(this, 25)">
+                  <h4>$25</h4>
+                  <p>Supporter</p>
+                </div>
+                <div class="donation-amount" onclick="selectAmount(this, 50)">
+                  <h4>$50</h4>
+                  <p>Friend</p>
+                </div>
+                <div class="donation-amount" onclick="selectAmount(this, 100)">
+                  <h4>$100</h4>
+                  <p>Advocate</p>
+                </div>
+                <div class="donation-amount" onclick="selectAmount(this, 250)">
+                  <h4>$250</h4>
+                  <p>Champion</p>
+                </div>
+              </div>
+              <div class="custom-donation">
+                <label for="customAmount">Other Amount</label>
+                <input type="number" id="customAmount" name="customAmount" placeholder="Enter amount in USD" min="1">
+                <input type="hidden" id="selectedAmount" name="selectedAmount" value="">
+              </div>
+            </div>
+            
+            <!-- Donation Frequency -->
+            <div class="form-field full-width">
+              <label class="required-field">Donation Frequency</label>
+              <div class="checkbox-grid">
+                <div class="checkbox-group">
+                  <input type="radio" id="oneTime" name="donationFrequency" value="oneTime" checked>
+                  <label for="oneTime">One-Time Donation</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="radio" id="monthly" name="donationFrequency" value="monthly">
+                  <label for="monthly">Monthly Donation</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="radio" id="quarterly" name="donationFrequency" value="quarterly">
+                  <label for="quarterly">Quarterly Donation</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="radio" id="annually" name="donationFrequency" value="annually">
+                  <label for="annually">Annual Donation</label>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Donor Information -->
+            <div class="form-field">
+              <label for="firstName" class="required-field">First Name</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="lastName" class="required-field">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="email" class="required-field">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="address">Street Address</label>
+              <input type="text" id="address" name="address">
+            </div>
+            
+            <div class="form-field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city">
+            </div>
+            
+            <div class="form-field">
+              <label for="zipCode">Zip Code</label>
+              <input type="text" id="zipCode" name="zipCode">
+            </div>
+            
+            <!-- Donation Designation -->
+            <div class="form-field full-width">
+              <label for="donationPurpose">Donation Purpose (Optional)</label>
+              <select id="donationPurpose" name="donationPurpose">
+                <option value="general">General Fund</option>
+                <option value="education">Education Programs</option>
+                <option value="youth">Youth Services</option>
+                <option value="seniors">Senior Support</option>
+                <option value="health">Health Initiatives</option>
+                <option value="food">Food Bank</option>
+              </select>
+            </div>
+            
+            <!-- Payment Methods -->
+            <div class="form-field full-width">
+              <label class="required-field">Payment Method</label>
+              <div class="payment-methods">
+                <div class="payment-method" onclick="selectPayment(this, 'credit')">
+                  <i class="fas fa-credit-card"></i>
+                  <p>Credit Card</p>
+                </div>
+                <div class="payment-method" onclick="selectPayment(this, 'paypal')">
+                  <i class="fab fa-paypal"></i>
+                  <p>PayPal</p>
+                </div>
+                <div class="payment-method" onclick="selectPayment(this, 'bank')">
+                  <i class="fas fa-university"></i>
+                  <p>Bank Transfer</p>
+                </div>
+                <input type="hidden" id="paymentMethod" name="paymentMethod" value="">
+              </div>
+            </div>
+            
+            <!-- Credit Card Information (would be shown/hidden based on selection) -->
+            <div id="creditCardFields" class="payment-fields" style="display: none;">
+              <div class="form-field full-width">
+                <label for="cardName" class="required-field">Name on Card</label>
+                <input type="text" id="cardName" name="cardName">
+              </div>
+              
+              <div class="form-field">
+                <label for="cardNumber" class="required-field">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+              </div>
+              
+              <div class="form-field">
+                <label for="expiryDate" class="required-field">Expiry Date</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+              </div>
+              
+              <div class="form-field">
+                <label for="cvv" class="required-field">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="XXX">
+              </div>
+            </div>
+            
+            <!-- Comments and Additional Information -->
+            <div class="form-field full-width">
+              <label for="comments">Comments or Special Instructions</label>
+              <textarea id="comments" name="comments"></textarea>
+            </div>
+            
+            <!-- Acknowledgement Options -->
+            <div class="form-field full-width">
+              <label>Acknowledgement Preferences</label>
+              <div class="checkbox-grid">
+                <div class="checkbox-group">
+                  <input type="checkbox" id="anonymous" name="anonymous">
+                  <label for="anonymous">Make this donation anonymous</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="newsletter" name="newsletter" checked>
+                  <label for="newsletter">Receive updates about impact</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="taxReceipt" name="taxReceipt" checked>
+                  <label for="taxReceipt">Email me a tax receipt</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="terms" name="terms" required>
+                  <label for="terms" class="required-field">I agree to the terms and conditions</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-field full-width">
+              <button type="submit" class="registration-submit-btn">Confirm Donation</button>
+            </div>
+          </form>
+          
+          <p class="form-info-text">Your donation may be tax-deductible. A receipt will be emailed to you after your donation is processed.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  </section>
+  
+  <footer style="background-color: #000; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+          <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">About Urbania</h3>
+          <p style="line-height: 1.6; color: #ccc;">Urbania Welfare Community Center is dedicated to serving our community through various programs, support services, and educational initiatives.</p>
+        </div>
+        
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+          <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Quick Links</h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 10px;"><a href="index.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+            <li style="margin-bottom: 10px;"><a href="services.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Services</a></li>
+            <li style="margin-bottom: 10px;"><a href="events.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Events</a></li>
+            <li style="margin-bottom: 10px;"><a href="volunteer.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Volunteer</a></li>
+          </ul>
+        </div>
+        
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+          <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Contact Info</h3>
+          <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-map-marker" style="margin-right: 10px;"></i> 123 Community Way, Urbania, NY 10001</p>
+          <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-phone" style="margin-right: 10px;"></i> (555) 123-4567</p>
+          <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:info@urbaniawelfare.org" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">info@urbaniawelfare.org</a></p>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid #333; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <div style="margin-bottom: 15px;">
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#4267B2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#E1306C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#1DA1F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0077B5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <p style="color: #ccc; font-size: 14px; margin: 0;">© <span id="currentYear">2023</span> Urbania Welfare Community Center. All rights reserved.</p>
+      </div>
+      <button onclick="scrollToTop()" id="scrollTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: #333; color: white; border: none; outline: none; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#555'" onmouseout="this.style.backgroundColor='#333'"><i class="fa fa-arrow-up"></i></button>
+    </div>
+  </footer>
+
+  <script>
+    // Update current year automatically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Scroll to top functionality
+    let scrollTopBtn = document.getElementById("scrollTopBtn");
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Add hover effect to all footer links
+    const footerLinks = document.querySelectorAll('footer a');
+    footerLinks.forEach(link => {
+      link.addEventListener('mouseover', function() {
+        this.style.color = '#fff';
+      });
+      link.addEventListener('mouseout', function() {
+        this.style.color = '#ccc';
+      });
+    });
+  </script>
+  <!-- Second footer removed to fix duplicate -->
+  </div>
+
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navbarNav').classList.toggle('active');
+    });
+    
+    // Select donation amount
+    function selectAmount(element, amount) {
+      // Remove selected class from all donation options
+      document.querySelectorAll('.donation-amount').forEach(item => {
+        item.classList.remove('selected');
+        item.style.borderColor = '#ddd';
+        item.style.backgroundColor = '#f9f9f9';
+      });
+      
+      // Add selected class to clicked element
+      element.classList.add('selected');
+      element.style.borderColor = '#000';
+      element.style.backgroundColor = '#f0f0f0';
+      
+      // Update hidden field with selected amount
+      document.getElementById('selectedAmount').value = amount;
+      
+      // Clear custom amount
+      document.getElementById('customAmount').value = '';
+    }
+    
+    // Select payment method
+    function selectPayment(element, method) {
+      // Remove selected class from all payment methods
+      document.querySelectorAll('.payment-method').forEach(item => {
+        item.classList.remove('selected');
+        item.style.borderColor = '#ddd';
+        item.style.backgroundColor = '#f9f9f9';
+      });
+      
+      // Add selected class to clicked element
+      element.classList.add('selected');
+      element.style.borderColor = '#000';
+      element.style.backgroundColor = '#f0f0f0';
+      
+      // Update hidden field with selected payment method
+      document.getElementById('paymentMethod').value = method;
+      
+      // Show/hide credit card fields based on selection
+      if (method === 'credit') {
+        document.getElementById('creditCardFields').style.display = 'block';
+      } else {
+        document.getElementById('creditCardFields').style.display = 'none';
+      }
+    }
+    
+    // Custom amount handling
+    document.getElementById('customAmount').addEventListener('input', function() {
+      if (this.value) {
+        // Remove selected class from pre-defined amounts
+        document.querySelectorAll('.donation-amount').forEach(item => {
+          item.classList.remove('selected');
+          item.style.borderColor = '#ddd';
+          item.style.backgroundColor = '#f9f9f9';
+        });
+        
+        // Update hidden field with custom amount
+        document.getElementById('selectedAmount').value = this.value;
+      }
+    });
+  </script>
+</body>
+</html>

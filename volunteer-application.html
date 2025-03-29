@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Application - Urbania Welfare Community Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-new.css">
+</head>
+<body>
+  <div id="navbar">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="services.html">Services</a>
+    <a href="education.html">Education</a>
+    <a href="volunteer.html">Volunteer</a>
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle">Registration <i class="fa fa-caret-down"></i></a>
+      <div class="dropdown-content">
+        <a href="services.html#register">Services</a>
+        <a href="education.html#register">Education</a>
+        <a href="volunteer.html#register">Volunteering</a>
+      </div>
+    </div>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html#donate" class="donate-btn">Donate</a>
+  </div>
+  
+  <section id="about-hero" class="about">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#education">Education</a>
+      <a href="index.html#volunteer">Volunteer</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">Registration <i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="services.html#register">Services</a>
+          <a href="education.html#register">Education</a>
+          <a href="volunteer.html#register">Volunteering</a>
+        </div>
+      </div>
+      <a
+        class="donate"
+        href="index.html#donate"
+        ><button class="cv">Donate Now</button></a
+      >
+    </nav>
+    
+ 
+
+  <main>
+    <section class="volunteer-registration-form">
+      <div class="section-container">
+        <h1>Volunteer Application</h1>
+        <div class="border-div"></div>
+        <p class="section-description">Thank you for your interest in volunteering with Urbania Welfare Community Center. Your time and talents can make a real difference in our community.</p>
+        
+        <div class="registration-form-container">
+          <h2>Volunteer Information</h2>
+          <form class="registration-form" action="#" method="post">
+            <!-- Personal Information -->
+            <div class="form-field">
+              <label for="firstName" class="required-field">First Name</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="lastName" class="required-field">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="email" class="required-field">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="phone" class="required-field">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="address">Street Address</label>
+              <input type="text" id="address" name="address">
+            </div>
+            
+            <div class="form-field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city">
+            </div>
+            
+            <div class="form-field">
+              <label for="zipCode">Zip Code</label>
+              <input type="text" id="zipCode" name="zipCode">
+            </div>
+            
+            <div class="form-field">
+              <label for="dob" class="required-field">Date of Birth</label>
+              <input type="date" id="dob" name="dob" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="occupation">Occupation</label>
+              <input type="text" id="occupation" name="occupation">
+            </div>
+            
+            <!-- Volunteer Areas of Interest -->
+            <div class="form-field full-width">
+              <label class="required-field">Areas of Interest (Select all that apply)</label>
+              <div class="volunteer-areas">
+                <label>
+                  <input type="checkbox" name="areas[]" value="education"> Education & Tutoring
+                </label>
+                <label>
+                  <input type="checkbox" name="areas[]" value="food"> Food Bank
+                </label>
+                <label>
+                  <input type="checkbox" name="areas[]" value="events"> Event Planning
+                </label>
+                <label>
+                  <input type="checkbox" name="areas[]" value="admin"> Administrative Support
+                </label>
+                <label>
+                  <input type="checkbox" name="areas[]" value="seniors"> Senior Services
+                </label>
+                <label>
+                  <input type="checkbox" name="areas[]" value="youth"> Youth Programs
+                </label>
+                <label>
+                  <input type="checkbox" name="areas[]" value="marketing"> Marketing & Communications
+                </label>
+                <label>
+                  <input type="checkbox" name="areas[]" value="fundraising"> Fundraising
+                </label>
+              </div>
+            </div>
+            
+            <!-- Availability -->
+            <div class="form-field full-width">
+              <label class="required-field">Availability</label>
+              <div class="availability-grid">
+                <div class="form-field">
+                  <label for="weekdays">Weekdays</label>
+                  <select id="weekdays" name="weekdays">
+                    <option value="">Select</option>
+                    <option value="mornings">Mornings</option>
+                    <option value="afternoons">Afternoons</option>
+                    <option value="evenings">Evenings</option>
+                    <option value="all">All Day</option>
+                    <option value="none">Not Available</option>
+                  </select>
+                </div>
+                
+                <div class="form-field">
+                  <label for="weekends">Weekends</label>
+                  <select id="weekends" name="weekends">
+                    <option value="">Select</option>
+                    <option value="mornings">Mornings</option>
+                    <option value="afternoons">Afternoons</option>
+                    <option value="evenings">Evenings</option>
+                    <option value="all">All Day</option>
+                    <option value="none">Not Available</option>
+                  </select>
+                </div>
+                
+                <div class="form-field">
+                  <label for="frequency">Frequency</label>
+                  <select id="frequency" name="frequency">
+                    <option value="">Select</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="biweekly">Bi-weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="occasionally">Occasionally</option>
+                    <option value="oneTime">One-time</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Skills and Experience -->
+            <div class="form-field full-width">
+              <label for="skills">Skills & Qualifications</label>
+              <textarea id="skills" name="skills" placeholder="Please list any relevant skills, qualifications, or certifications that might be helpful."></textarea>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="experience">Previous Volunteer Experience</label>
+              <textarea id="experience" name="experience" placeholder="Briefly describe any previous volunteer experience you have."></textarea>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="languages">Languages Spoken</label>
+              <input type="text" id="languages" name="languages" placeholder="English, Spanish, etc.">
+            </div>
+            
+            <!-- Emergency Contact -->
+            <div class="form-field">
+              <label for="emergencyName" class="required-field">Emergency Contact Name</label>
+              <input type="text" id="emergencyName" name="emergencyName" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="emergencyPhone" class="required-field">Emergency Contact Phone</label>
+              <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="emergencyRelation" class="required-field">Relationship</label>
+              <input type="text" id="emergencyRelation" name="emergencyRelation" required>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="hearAbout">How did you hear about our volunteer program?</label>
+              <select id="hearAbout" name="hearAbout">
+                <option value="">Select</option>
+                <option value="friend">Friend or Family</option>
+                <option value="website">Website</option>
+                <option value="social">Social Media</option>
+                <option value="event">Community Event</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-field full-width">
+              <label for="motivation">Why are you interested in volunteering with us?</label>
+              <textarea id="motivation" name="motivation"></textarea>
+            </div>
+            
+            <!-- Agreements and Consent -->
+            <div class="form-field full-width">
+              <label>Consents and Agreements</label>
+              <div class="checkbox-grid">
+                <div class="checkbox-group">
+                  <input type="checkbox" id="background" name="background" required>
+                  <label for="background" class="required-field">I consent to a background check if needed</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="newsletter" name="newsletter" checked>
+                  <label for="newsletter">Receive updates about volunteer opportunities</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="photo" name="photo">
+                  <label for="photo">I allow the use of my photos for promotional purposes</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="terms" name="terms" required>
+                  <label for="terms" class="required-field">I agree to the volunteer terms and conditions</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-field full-width">
+              <button type="submit" class="registration-submit-btn">Submit Application</button>
+            </div>
+          </form>
+          
+          <p class="form-info-text">Thank you for your interest in volunteering! We will review your application and contact you within 3-5 business days.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer style="background-color: #000; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+          <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">About Urbania</h3>
+          <p style="line-height: 1.6; color: #ccc;">Urbania Welfare Community Center is dedicated to serving our community through various programs, support services, and educational initiatives.</p>
+        </div>
+        
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+          <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Quick Links</h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 10px;"><a href="index.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+            <li style="margin-bottom: 10px;"><a href="services.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Services</a></li>
+            <li style="margin-bottom: 10px;"><a href="events.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Events</a></li>
+            <li style="margin-bottom: 10px;"><a href="volunteer.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Volunteer</a></li>
+          </ul>
+        </div>
+        
+        <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+          <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Contact Info</h3>
+          <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-map-marker" style="margin-right: 10px;"></i> 123 Community Way, Urbania, NY 10001</p>
+          <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-phone" style="margin-right: 10px;"></i> (555) 123-4567</p>
+          <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:info@urbaniawelfare.org" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">info@urbaniawelfare.org</a></p>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid #333; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <div style="margin-bottom: 15px;">
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#4267B2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#E1306C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#1DA1F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0077B5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <p style="color: #ccc; font-size: 14px; margin: 0;">© <span id="currentYear">2023</span> Urbania Welfare Community Center. All rights reserved.</p>
+      </div>
+      <button onclick="scrollToTop()" id="scrollTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: #333; color: white; border: none; outline: none; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#555'" onmouseout="this.style.backgroundColor='#333'"><i class="fa fa-arrow-up"></i></button>
+    </div>
+  </footer>
+
+  <script>
+    // Update current year automatically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Scroll to top functionality
+    let scrollTopBtn = document.getElementById("scrollTopBtn");
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Add hover effect to all footer links
+    const footerLinks = document.querySelectorAll('footer a');
+    footerLinks.forEach(link => {
+      link.addEventListener('mouseover', function() {
+        this.style.color = '#fff';
+      });
+      link.addEventListener('mouseout', function() {
+        this.style.color = '#ccc';
+      });
+    });
+  </script>
+  <!-- Second footer removed to fix duplicate -->
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      hamburgerIcon.addEventListener('click', function() {
+        this.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+      });
+      
+      // Close menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburgerIcon.classList.remove('open');
+          mobileMenu.classList.remove('open');
+        });
+      });
+      
+      // Improved volunteer area selection highlight
+      const volunteerAreaLabels = document.querySelectorAll('.volunteer-areas label');
+      const volunteerCheckboxes = document.querySelectorAll('.volunteer-areas input[type="checkbox"]');
+      
+      volunteerAreaLabels.forEach(label => {
+        label.addEventListener('click', function(e) {
+          // We don't need to prevent default or manually toggle anymore
+          // Modern CSS will handle the styling via :checked state
+          
+          // For browsers that don't support :has selector
+          if (!CSS.supports('selector(:has(*))')) {
+            setTimeout(() => {
+              const checkbox = this.querySelector('input[type="checkbox"]');
+              if (checkbox.checked) {
+                this.style.backgroundColor = '#f0f0f0';
+                this.style.borderColor = '#000';
+                this.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
+              } else {
+                this.style.backgroundColor = '#f9f9f9';
+                this.style.borderColor = '#eee';
+                this.style.boxShadow = 'none';
+              }
+            }, 10);
+          }
+        });
+      });
+      
+      // Add click event for all checkboxes to improve mobile experience
+      volunteerCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('click', function(e) {
+          e.stopPropagation(); // Prevent label click handler from firing
+        });
+      });
+    });
+  </script>
+</body>
+</html>

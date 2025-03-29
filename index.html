@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ozzot6f8b4");
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urbania Welfare Community Center</title>
+  <link rel="shortcut icon" href="./assets/icecream.png" type="image/x-icon" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-new.css" />
+</head>
+  <body oncontextmenu="return false">
+
+    <div class="cursor"></div>
+    <div class="main" style="background: rgba(0, 0, 0, 0.9);">
+      <a href="index.html">
+        <div class="tag">
+          <span>U</span>
+          <span>R</span>
+          <span>B</span>
+          <span>A</span>
+          <span>N</span>
+          <span>I</span>
+          <span>A</span>
+        </div>
+      </a>
+      <div id="navbar">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="services.html">Services</a>
+        <a href="education.html">Education</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#donate" class="donate-btn">Donate</a>
+      </div>
+      
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" id="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="services.html">Services</a>
+        <a href="education.html">Education</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#donate" class="donate-btn">Donate</a>
+      </div>
+      
+      <style>
+        /* Hamburger menu styles */
+        .hamburger-menu {
+          display: none;
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          z-index: 1000;
+        }
+        
+        .hamburger-icon {
+          width: 30px;
+          height: 25px;
+          position: relative;
+          cursor: pointer;
+        }
+        
+        .hamburger-icon span {
+          display: block;
+          position: absolute;
+          height: 3px;
+          width: 100%;
+          background: #fff;
+          border-radius: 3px;
+          opacity: 1;
+          transform: rotate(0deg);
+          transition: .25s ease-in-out;
+        }
+        
+        .hamburger-icon span:nth-child(1) {
+          top: 0px;
+        }
+        
+        .hamburger-icon span:nth-child(2) {
+          top: 10px;
+        }
+        
+        .hamburger-icon span:nth-child(3) {
+          top: 20px;
+        }
+        
+        .hamburger-icon.open span:nth-child(1) {
+          top: 10px;
+          transform: rotate(135deg);
+        }
+        
+        .hamburger-icon.open span:nth-child(2) {
+          opacity: 0;
+          left: -60px;
+        }
+        
+        .hamburger-icon.open span:nth-child(3) {
+          top: 10px;
+          transform: rotate(-135deg);
+        }
+        
+        .mobile-menu {
+          display: none;
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 250px;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.95);
+          z-index: 999;
+          padding-top: 70px;
+          transition: right 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+          right: 0;
+        }
+        
+        .mobile-menu a {
+          display: block;
+          color: #fff;
+          padding: 15px 25px;
+          text-decoration: none;
+          font-size: 18px;
+          transition: 0.3s;
+        }
+        
+        .mobile-menu a:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-menu .donate-btn {
+          margin: 20px 25px;
+          padding: 10px 15px;
+          background: #ff4d4d;
+          border-radius: 5px;
+          text-align: center;
+        }
+        
+        /* Media query for responsive design */
+        @media screen and (max-width: 768px) {
+          #navbar {
+        display: none;
+          }
+          
+          .hamburger-menu {
+        display: block;
+          }
+          
+          .mobile-menu {
+        display: block;
+          }
+        }
+      </style>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const hamburgerIcon = document.getElementById('hamburger-icon');
+          const mobileMenu = document.getElementById('mobile-menu');
+          
+          hamburgerIcon.addEventListener('click', function() {
+        this.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+          });
+          
+          // Close menu when clicking a link
+          const mobileLinks = mobileMenu.querySelectorAll('a');
+          mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburgerIcon.classList.remove('open');
+          mobileMenu.classList.remove('open');
+        });
+          });
+        });
+      </script>
+  
+        
+        <section id="about-hero" class="about">
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#events">Events</a>
+            <a href="index.html#education">Education</a>
+            <a href="index.html#volunteer">Volunteer</a>
+            <div class="dropdown">
+              <a href="#" class="dropdown-toggle">Registration <i class="fa fa-caret-down"></i></a>
+              <div class="dropdown-content">
+                <a href="services.html#register">Services</a>
+                <a href="education.html#register">Education</a>
+                <a href="volunteer.html#register">Volunteering</a>
+              </div>
+            </div>
+            <a
+              class="donate"
+              href="index.html#donate"
+              ><button class="cv">Donate Now</button></a
+            >
+          </nav>
+
+        
+        <div class="hero" style="font-size: 1rem;">
+          <div class="profile"><span id="profile" style="font-size: 2.5rem;">Community Center</span></div>
+          <div class="video">
+            <div id='stars'></div>
+            <div id='stars2'></div>
+            <div id='stars3'></div>
+          </div>
+          <div class="full" style="font-size: 1.125rem;">
+            <div class="one">
+              <h1 class="hero-title" style="font-size: clamp(.5rem, 5vw, 14.5rem);">Urbania</h1>
+              <img id="circle"
+              src="./assets/ICON/shuriken.png"
+              alt="welfare icon"
+            />
+              <h1 style="font-size: clamp(2rem, 4vw, 14rem);">Welfare</h1>
+            </div>
+            <h1 style="font-size: clamp(1.8rem, 3.5vw, 20.625rem);">Center</h1>
+            <h2 style="font-size: 1.75rem;">Transforming Lives, Building Community</h2>
+          </div>
+        
+          <div id="hero-btn">
+            <i class="ri-arrow-down-line"></i>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="about">
+        <div class="upper-text">
+          <h4 id="trans">ABOUT US</h4>
+          <div class="about-box">
+            <h4>
+              <a
+                href="about.html"
+                >Learn More</a
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="19"
+                viewBox="0 0 28 19"
+                fill="none"
+              >
+                <path
+                  d="M26.7148 9.36572L0.714844 9.36572"
+                  stroke="black"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M18.4712 0.99995C20.3007 4.29017 26.7249 9.4709 26.7249 9.4709C26.7249 9.4709 20.1683 14.483 18.2539 17.7246"
+                  stroke="black"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </h4>
+          </div>
+        </div>
+        <style>
+          .highlight-word {
+            color: #000000;
+            transition: color 0.3s ease;
+          }
+          
+        </style>
+
+        <div class="border-div"></div>
+        <div class="about-text">
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight-word">URBANIA</span> <span class="highlight-word">WELFARE</span> <span class="highlight-word">COMMUNITY</span> <span class="highlight-word">CENTER</span> <span class="highlight-word">IS</span> <span class="highlight-word">A</span> <b><span class="highlight-word">NON-PROFIT</span></b> <span class="highlight-word">ORGANIZATION</span> <span class="highlight-word">DEDICATED</span> <span class="highlight-word">TO</span>
+            <span class="highlight-word">ENHANCING</span> <span class="highlight-word">LIVES</span> <span class="highlight-word">THROUGH</span> <span class="highlight-word">EDUCATION,</span> <span class="highlight-word">SUPPORT,</span> <span class="highlight-word">AND</span> <span class="highlight-word">COMMUNITY</span> <span class="highlight-word">ENGAGEMENT.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img
+              src="./assets/ICON/shuriken.png"
+              alt="welfare icon"
+            />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight-word">WE</span> <span class="highlight-word">STRIVE</span> <span class="highlight-word">TO</span> <span class="highlight-word">CREATE</span> <span class="highlight-word">A</span> <span class="highlight-word">WORLD</span> <span class="highlight-word">WHERE</span> <span class="highlight-word">EVERYONE</span> <span class="highlight-word">HAS</span> <span class="highlight-word">ACCESS</span> <span class="highlight-word">TO</span> <span class="highlight-word">RESOURCES,</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="highlight-word">KNOWLEDGE,</span> &nbsp;&nbsp;&nbsp;&nbsp; <span class="highlight-word">AND</span> <span class="highlight-word">SUPPORT</span>
+            <span class="line"></span><span class="highlight-word">TO</span> <span class="highlight-word">ACHIEVE</span> <span class="highlight-word">THEIR</span> <span class="highlight-word">FULLEST</span> <b><span class="highlight-word">POTENTIAL.</span></b>
+            <span class="para-bg"></span>
+          </p>
+        </div>
+              
+        <script>
+          const words = document.querySelectorAll('.highlight-word');
+          let currentIndex = 0;
+
+          function highlightNextWord() {
+            if (currentIndex < words.length) {
+              words[currentIndex].classList.add('active');
+              currentIndex++;
+              setTimeout(highlightNextWord, 100);
+            }
+          }
+
+          // Start the animation when the element enters viewport
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                highlightNextWord();
+                observer.unobserve(entry.target);
+              }
+            });
+          });
+
+          document.querySelector('.about-text').forEach(element => {
+            observer.observe(element);
+          });
+        </script>
+              
+
+
+        <!-- Latest Events Section -->
+        <div class="heading" style="margin-top: 60px;">
+          <img
+            height="30px"
+            width="30px"
+            src="./assets/ICON/shuriken.png"
+            alt="welfare icon"
+          />
+          <h1>Latest Events</h1>
+          <img
+            height="30px"
+            width="30px"
+            src="./assets/ICON/shuriken.png"
+            alt="welfare icon"
+          />
+        </div>
+        
+        <div class="latest-events-container">
+          <div class="events-list">
+            <h2>Upcoming Events</h2>
+            <a href="events.html" class="event-link">
+              <div class="event-item">
+                <div class="event-date">
+                  <h3>25</h3>
+                  <p>JUN</p>
+                </div>
+                <div class="event-summary">
+                  <h3>Community Health Fair</h3>
+                  <p><i class="fa fa-clock-o"></i> 10:00 AM - 4:00 PM</p>
+                  <p><i class="fa fa-map-marker"></i> Main Center Hall</p>
+                </div>
+            </div>
+            </a>
+            
+            <a href="events.html" class="event-link">
+              <div class="event-item">
+                <div class="event-date">
+                  <h3>12</h3>
+                  <p>JUL</p>
+            </div>
+                <div class="event-summary">
+                  <h3>Financial Literacy Workshop</h3>
+                  <p><i class="fa fa-clock-o"></i> 6:00 PM - 8:00 PM</p>
+                  <p><i class="fa fa-map-marker"></i> Education Room 3</p>
+            </div>
+            </div>
+            </a>
+            
+            <a href="events.html" class="event-link">
+              <div class="event-item">
+                <div class="event-date">
+                  <h3>20</h3>
+                  <p>JUL</p>
+            </div>
+                <div class="event-summary">
+                  <h3>Youth Sports Day</h3>
+                  <p><i class="fa fa-clock-o"></i> 9:00 AM - 1:00 PM</p>
+                  <p><i class="fa fa-map-marker"></i> Community Playground</p>
+            </div>
+            </div>
+            </a>
+            
+            <a href="events.html" class="event-link">
+              <div class="event-item">
+                <div class="event-date">
+                  <h3>5</h3>
+                  <p>AUG</p>
+            </div>
+                <div class="event-summary">
+                  <h3>Community Cleanup Day</h3>
+                  <p><i class="fa fa-clock-o"></i> 8:00 AM - 12:00 PM</p>
+                  <p><i class="fa fa-map-marker"></i> Center Entrance</p>
+            </div>
+            </div>
+            </a>
+            
+            <div class="events-btn-container">
+              <a href="events.html" class="view-events-btn">View All Events</a>
+            </div>
+            </div>
+          
+          <div class="prayer-times">
+            <h2>Daily Prayer Times</h2>
+            <div class="prayer-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Prayer</th>
+                    <th>Start Time</th>
+                    <th>Jamaat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Fajr</td>
+                    <td>5:15 AM</td>
+                    <td>5:45 AM</td>
+                  </tr>
+                  <tr>
+                    <td>Dhuhr</td>
+                    <td>1:30 PM</td>
+                    <td>2:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Asr</td>
+                    <td>4:45 PM</td>
+                    <td>5:15 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Maghrib</td>
+                    <td>7:10 PM</td>
+                    <td>7:20 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Isha</td>
+                    <td>8:45 PM</td>
+                    <td>9:15 PM</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="prayer-note">Prayer times updated for June 2023</p>
+            </div>
+            <div class="prayer-btn-container">
+              <a href="events.html" class="view-events-btn">View Upcoming Events</a>
+            </div>
+            </div>
+        </div>
+        <!-- End Latest Events Section -->
+      </section>
+      <section id="services" class="services">
+        <div class="upper-text">
+          <h4>OUR SERVICES</h4>
+        </div>
+        <div class="border-div"></div>
+        <div class="section-grid-container">
+          <div class="section-card zoom-effect" onclick="window.location.href='services.html'">
+            <div class="section-icon">
+              <i class="fa fa-heart"></i>
+            </div>
+            <h3>Counseling Services</h3>
+            <p>Professional mental health and wellness support for all ages.</p>
+          </div>
+          
+          <div class="section-card zoom-effect" onclick="window.location.href='services.html'">
+            <div class="section-icon">
+              <i class="fa fa-medkit"></i>
+            </div>
+            <h3>Health Services</h3>
+            <p>Basic health screenings and wellness checks for the community.</p>
+          </div>
+          
+          <div class="section-card zoom-effect" onclick="window.location.href='services.html'">
+            <div class="section-icon">
+              <i class="fa fa-cutlery"></i>
+            </div>
+            <h3>Food Assistance</h3>
+            <p>Providing essential nutrition to families and individuals in need.</p>
+          </div>
+          
+          <div class="section-card zoom-effect" onclick="window.location.href='services.html'">
+            <div class="section-icon">
+              <i class="fa fa-home"></i>
+            </div>
+            <h3>Housing Support</h3>
+            <p>Resources for finding and maintaining safe, affordable housing.</p>
+          </div>
+          
+          <div class="section-card zoom-effect" onclick="window.location.href='services.html'">
+            <div class="section-icon">
+              <i class="fa fa-money"></i>
+        </div>
+            <h3>Financial Assistance</h3>
+            <p>Programs to promote financial stability and independence.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section id="events" class="events">
+        <div class="upper-text">
+          <h3>UPCOMING EVENTS</h3>
+          <div class="events-box">
+            <h3>
+              <a href="events.html">
+                View All Events</a
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="19"
+                viewBox="0 0 28 19"
+                fill="none"
+              >
+                <path
+                  d="M26.7148 9.36572L0.714844 9.36572"
+                  stroke="black"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M18.4712 0.99995C20.3007 4.29017 26.7249 9.4709 26.7249 9.4709C26.7249 9.4709 20.1683 14.483 18.2539 17.7246"
+                  stroke="black"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </h3>
+          </div>
+        </div>
+        <div class="border-div"></div>
+        <h1>JOIN US FOR OUR ACTIVITIES</h1>
+        <div class="events-container">
+          <div class="event">
+            <div class="event-date">
+              <h3>25</h3>
+              <p>JUN</p>
+            </div>
+            <div class="event-details">
+              <h3>Community Health Fair</h3>
+              <p>Free health screenings, wellness workshops, and family activities</p>
+              <span class="time-location"><i class="fa fa-clock-o"></i> 10:00 AM - 4:00 PM | <i class="fa fa-map-marker"></i> Main Center Hall</span>
+              <a href="events.html" class="register-btn">Register Now</a>
+            </div>
+          </div>
+          
+          <div class="event">
+            <div class="event-date">
+              <h3>12</h3>
+              <p>JUL</p>
+            </div>
+            <div class="event-details">
+              <h3>Financial Literacy Workshop</h3>
+              <p>Learn essential money management skills and investment basics</p>
+              <span class="time-location"><i class="fa fa-clock-o"></i> 6:00 PM - 8:00 PM | <i class="fa fa-map-marker"></i> Education Room 3</span>
+              <a href="events.html" class="register-btn">Register Now</a>
+            </div>
+          </div>
+          
+          <div class="event">
+            <div class="event-date">
+              <h3>20</h3>
+              <p>JUL</p>
+            </div>
+            <div class="event-details">
+              <h3>Youth Sports Day</h3>
+              <p>Sports activities, games, and friendly competitions for children and teens</p>
+              <span class="time-location"><i class="fa fa-clock-o"></i> 9:00 AM - 1:00 PM | <i class="fa fa-map-marker"></i> Community Playground</span>
+              <a href="events.html" class="register-btn">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="education" class="education" style="background: white;">
+        <div class="upper-text">
+          <h3>EDUCATION PROGRAMS</h3>
+        </div>
+        <div class="border-div"></div>
+        <h1>LEARN AND GROW WITH US</h1>
+        <div class="section-grid-container">
+          <div class="section-card zoom-effect" onclick="window.location.href='education.html'">
+            <div class="section-icon">
+              <i class="fa fa-child"></i>
+            </div>
+            <h3>After-School Programs</h3>
+            <p>Enrichment activities and homework help for K-12 students.</p>
+          </div>
+          
+          <div class="section-card zoom-effect" onclick="window.location.href='education.html'">
+            <div class="section-icon">
+              <i class="fa fa-laptop"></i>
+            </div>
+            <h3>Digital Literacy</h3>
+            <p>Computer skills for all ages, from basics to advanced topics.</p>
+          </div>
+          
+          <div class="section-card zoom-effect" onclick="window.location.href='education.html'">
+            <div class="section-icon">
+              <i class="fa fa-briefcase"></i>
+            </div>
+            <h3>Job Training</h3>
+            <p>Career development, resume building, and interview preparation.</p>
+          </div>
+          
+          <div class="section-card zoom-effect" onclick="window.location.href='education.html'">
+            <div class="section-icon">
+              <i class="fa fa-book"></i>
+            </div>
+            <h3>Adult Education</h3>
+            <p>GED preparation, language courses, and continuing education.</p>
+          </div>
+          
+          <div class="section-card zoom-effect" onclick="window.location.href='education.html'">
+            <div class="section-icon">
+              <i class="fa fa-language"></i>
+            </div>
+            <h3>Language Classes</h3>
+            <p>English and other language courses for diverse learning needs.</p>
+          </div>
+          
+          <div class="section-card zoom-effect" onclick="window.location.href='education.html'">
+            <div class="section-icon">
+              <i class="fa fa-paint-brush"></i>
+            </div>
+            <h3>Arts & Creativity</h3>
+            <p>Workshops and classes in various arts and creative skills.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section id="volunteer" class="volunteer">
+        <div class="upper-text">
+          <h4>VOLUNTEER WITH US</h4>
+        </div>
+        <div class="border-div"></div>
+        <h1>MAKE A DIFFERENCE</h1>
+        <div class="section-grid-container">
+          <div class="section-card" onclick="window.location.href='volunteer.html'">
+            <div class="section-icon">
+              <i class="fa fa-graduation-cap"></i>
+            </div>
+            <h3>Education Volunteer</h3>
+            <p>Tutor, mentor, or assist in our educational programs.</p>
+          </div>
+          
+          <div class="section-card" onclick="window.location.href='volunteer.html'">
+            <div class="section-icon">
+              <i class="fa fa-cutlery"></i>
+            </div>
+            <h3>Food Bank Assistant</h3>
+            <p>Help organize, package, and distribute food to the community.</p>
+          </div>
+          
+          <div class="section-card" onclick="window.location.href='volunteer.html'">
+            <div class="section-icon">
+              <i class="fa fa-heartbeat"></i>
+            </div>
+            <h3>Health Services Support</h3>
+            <p>Assist in organizing health fairs and wellness programs.</p>
+          </div>
+          
+          <div class="section-card" onclick="window.location.href='volunteer.html'">
+            <div class="section-icon">
+              <i class="fa fa-calendar"></i>
+            </div>
+            <h3>Event Coordination</h3>
+            <p>Help plan, organize, and run community events and programs.</p>
+          </div>
+          
+          <div class="section-card" onclick="window.location.href='volunteer.html'">
+            <div class="section-icon">
+              <i class="fa fa-desktop"></i>
+            </div>
+            <h3>Administrative Support</h3>
+            <p>Assist with office tasks, communications, and outreach.</p>
+          </div>
+          
+          <div class="section-card" onclick="window.location.href='volunteer.html'">
+            <div class="section-icon">
+              <i class="fa fa-wrench"></i>
+            </div>
+            <h3>Facility Maintenance</h3>
+            <p>Help maintain and improve our community center facilities.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section id="past-events" class="past-events" style="background: white;">
+        <div class="upper-text">
+          <h4>PAST EVENTS</h4>
+        </div>
+        <div class="border-div"></div>
+        <h1>OUR COMMUNITY IN ACTION</h1>
+        <div class="gallery-grid">
+          <div class="gallery-item" onclick="window.location.href='gallery.html'">
+            <div class="gallery-image">
+              <img src="https://memorialregionalhealth.com/wp-content/uploads/3633-Health-Fair_website-image.jpg" alt="Community Health Fair">
+              <div class="gallery-overlay">
+                <h3>Community Health Fair</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item" onclick="window.location.href='gallery.html'">
+            <div class="gallery-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2T92ougmgKEzsiNiSAeoJDboEMJB4lqAwQ&s" alt="Summer Youth Program">
+              <div class="gallery-overlay">
+                <h3>Summer Youth Program</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item" onclick="window.location.href='gallery.html'">
+            <div class="gallery-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGGVk_JQ_xuL7xgz077-lQScFktgncb4Klnw&s" alt="Senior Wellness Day">
+              <div class="gallery-overlay">
+                <h3>Senior Wellness Day</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item" onclick="window.location.href='gallery.html'">
+            <div class="gallery-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LGpukuQYiBppYx2VI4_T7RoEw3tO7ArAeQ&s" alt="Neighborhood Cleanup">
+              <div class="gallery-overlay">
+                <h3>Neighborhood Cleanup</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item" onclick="window.location.href='gallery.html'">
+            <div class="gallery-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0JTSTx96V2NMnVyC3COogvwj3XOVS0RuvuA&s" alt="Holiday Food Drive">
+              <div class="gallery-overlay">
+                <h3>Holiday Food Drive</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item" onclick="window.location.href='gallery.html'">
+            <div class="gallery-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO6BUfVHYwMJxf2sPj_IPjCTwUOZiZlu0LIw&s" alt="Cultural Celebration">
+              <div class="gallery-overlay">
+                <h3>Cultural Celebration</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="registration" class="registration">
+        <div class="upper-text">
+          <h4>REGISTRATION</h4>
+        </div>
+        <div class="border-div"></div>
+        <h1>JOIN OUR PROGRAMS</h1>
+        <p class="section-description">Access our registration forms to participate in our various programs and services. Simply click on any form to get started.</p>
+        
+        <div class="forms-container">
+          <div class="form-card" onclick="window.location.href='./services-registration.html'">
+            <div class="form-icon">
+              <i class="fa fa-file-text-o"></i>
+            </div>
+            <h3>Services Registration</h3>
+            <p>Register for counseling, health services, and other support programs</p>
+            <span class="form-tag">Form</span>
+          </div>
+          
+          <div class="form-card" onclick="window.location.href='./education-registration.html'">
+            <div class="form-icon">
+              <i class="fa fa-file-text-o"></i>
+            </div>
+            <h3>Education Registration</h3>
+            <p>Sign up for classes, workshops, and educational programs</p>
+            <span class="form-tag">Form</span>
+          </div>
+          
+          <div class="form-card" onclick="window.location.href='./volunteer-application.html'">
+            <div class="form-icon">
+              <i class="fa fa-file-text-o"></i>
+            </div>
+            <h3>Volunteer Application</h3>
+            <p>Apply to volunteer for various community programs and events</p>
+            <span class="form-tag">Form</span>
+          </div>
+          
+          <div class="form-card" onclick="window.location.href='./donation-form.html'">
+            <div class="form-icon">
+              <i class="fa fa-file-text-o"></i>
+            </div>
+            <h3>Donation Form</h3>
+            <p>Support our mission through financial or in-kind contributions</p>
+            <span class="form-tag">Form</span>
+          </div>
+          
+          <div class="form-card" onclick="window.location.href='./event-registration.html'">
+            <div class="form-icon">
+              <i class="fa fa-file-text-o"></i>
+            </div>
+            <h3>Event Registration</h3>
+            <p>Register to attend our community events and activities</p>
+            <span class="form-tag">Form</span>
+          </div>
+        </div>
+      </section>
+      
+      <section id="videos" class="videos">
+        <div class="upper-text">
+          <h4>RECENT VIDEOS</h4>
+        </div>
+        <div class="border-div"></div>
+        <h1>WATCH & LEARN</h1>
+        <p class="section-description">Explore our recent videos showcasing community events, educational content, and inspiring stories from Urbania Welfare Center.</p>
+        
+        <div class="videos-container">
+          <div class="video-item" onclick="window.location.href='videos/community-highlight.html'">
+            <div class="video-thumbnail">
+              <img src="./assets/videos/video1-thumb.jpg" alt="Community Highlight">
+              <div class="play-icon">
+                <i class="fa fa-play-circle-o"></i>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>Community Highlight: Summer Health Fair</h3>
+              <p><i class="fa fa-calendar"></i> June 25, 2023</p>
+              <p><i class="fa fa-clock-o"></i> 5:23</p>
+            </div>
+          </div>
+          
+          <div class="video-item" onclick="window.location.href='videos/education-workshop.html'">
+            <div class="video-thumbnail">
+              <img src="./assets/videos/video2-thumb.jpg" alt="Education Workshop">
+              <div class="play-icon">
+                <i class="fa fa-play-circle-o"></i>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>Financial Literacy Workshop Recap</h3>
+              <p><i class="fa fa-calendar"></i> July 12, 2023</p>
+              <p><i class="fa fa-clock-o"></i> 8:45</p>
+            </div>
+          </div>
+          
+          <div class="video-item" onclick="window.location.href='videos/volunteer-stories.html'">
+            <div class="video-thumbnail">
+              <img src="./assets/videos/video3-thumb.jpg" alt="Volunteer Stories">
+              <div class="play-icon">
+                <i class="fa fa-play-circle-o"></i>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>Volunteer Stories: Making a Difference</h3>
+              <p><i class="fa fa-calendar"></i> July 30, 2023</p>
+              <p><i class="fa fa-clock-o"></i> 6:12</p>
+            </div>
+          </div>
+          
+          <div class="video-item" onclick="window.location.href='videos/youth-program.html'">
+            <div class="video-thumbnail">
+              <img src="./assets/videos/video4-thumb.jpg" alt="Youth Program">
+              <div class="play-icon">
+                <i class="fa fa-play-circle-o"></i>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>Youth Sports Day Highlights</h3>
+              <p><i class="fa fa-calendar"></i> August 5, 2023</p>
+              <p><i class="fa fa-clock-o"></i> 4:38</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-button-container">
+          <a href="videos.html" class="video-btn">View All Videos</a>
+        </div>
+      </section>
+      
+      <section id="donate" class="donate-section">
+        <div class="upper-text">
+          <h4>SUPPORT OUR MISSION</h4>
+        </div>
+        <div class="border-div"></div>
+        <div class="donate-content">
+          <h2>Your Contribution Makes a Difference</h2>
+          <p>Help us continue our vital community services through your generous donation. We offer multiple ways to give:</p>
+          
+          <div class="donation-options">
+            <div class="donation-card">
+              <div class="donation-icon">
+                <i class="fa fa-credit-card"></i>
+              </div>
+              <h3>Traditional Donation</h3>
+              <p>Support us with a one-time or recurring donation through Razorpay</p>
+              <button id="razorpay-btn" class="donate-option-btn"><a href="./bank.html" style="text-decoration: none; color: white;">Donate with Razorpay</a></button>
+            </div>
+            
+            <div class="donation-card">
+              <div class="donation-icon">
+                <i class="fa fa-bitcoin"></i>
+              </div>
+              <h3>Bitcoin Donation</h3>
+              <p>Contribute using cryptocurrency through the Strike platform</p>
+              <button id="strike-btn" class="donate-option-btn"><a href="./donation-website/INDEX.HTML" style="text-decoration: none; color: white;">Donate with Strike</a></button>
+            </div>
+            
+            <div class="donation-card">
+              <div class="donation-icon">
+                <i class="fa fa-gift"></i>
+              </div>
+              <h3>In-Kind Donation</h3>
+              <p>Donate goods, supplies, or professional services</p>
+              <a href="contact.html" class="donate-option-btn">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="contact" class="contact">
+        <div class="upper-text">
+          <h4>CONTACT US</h4>
+        </div>
+        <div class="border-div"></div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <div class="contact-detail">
+              <i class="fa fa-map-marker"></i>
+              <p>123 Community Way, Urbania, NY 10001</p>
+            </div>
+            <div class="contact-detail">
+              <i class="fa fa-phone"></i>
+              <p>(555) 123-4567</p>
+            </div>
+            <div class="contact-detail">
+              <i class="fa fa-envelope"></i>
+              <p>info@urbaniawelfare.org</p>
+            </div>
+            <div class="contact-detail">
+              <i class="fa fa-clock-o"></i>
+              <p>Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</p>
+            </div>
+            <div class="social-links">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+          
+          <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+              <input type="hidden" name="subject" value="New Contact Form Submission">
+              <input type="hidden" name="redirect" value="https://web3forms.com/success">
+              
+              <div class="form-group">
+                <input type="text" name="name" required placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" required placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <input type="text" name="phone" placeholder="Your Phone (Optional)">
+              </div>
+              <div class="form-group">
+                <select name="interest">
+                  <option value="">I'm interested in...</option>
+                  <option value="Volunteer">Volunteering</option>
+                  <option value="Donation">Making a Donation</option>
+                  <option value="Services">Using Services</option>
+                  <option value="Partnership">Partnership Opportunities</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea name="message" required placeholder="Your Message"></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      
+      <section class="newsletter">
+        <div class="newsletter-container">
+          <h2>Subscribe to Our Newsletter</h2>
+          <p>Stay updated with our latest events, programs, and community news</p>
+          <form action="https://api.web3forms.com/submit" method="POST" class="newsletter-form">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="Newsletter Subscription">
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            
+            <div class="newsletter-input">
+              <input type="email" name="email" required placeholder="Your Email Address">
+              <button type="submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      
+      <footer style="background-color: #000; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+            <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+              <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">About Urbania</h3>
+              <p style="line-height: 1.6; color: #ccc;">Urbania Welfare Community Center is dedicated to serving our community through various programs, support services, and educational initiatives.</p>
+            </div>
+            
+            <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+              <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Quick Links</h3>
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 10px;"><a href="index.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+                <li style="margin-bottom: 10px;"><a href="services.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Services</a></li>
+                <li style="margin-bottom: 10px;"><a href="events.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Events</a></li>
+                <li style="margin-bottom: 10px;"><a href="volunteer.html" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">Volunteer</a></li>
+              </ul>
+            </div>
+            
+            <div style="flex: 1; min-width: 250px; margin-bottom: 20px; text-align: left; padding: 0 15px;">
+              <h3 style="margin-bottom: 20px; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 10px;">Contact Info</h3>
+              <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-map-marker" style="margin-right: 10px;"></i> 123 Community Way, Urbania, NY 10001</p>
+              <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-phone" style="margin-right: 10px;"></i> (555) 123-4567</p>
+              <p style="margin-bottom: 10px; color: #ccc;"><i class="fa fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:info@urbaniawelfare.org" style="color: #ccc; text-decoration: none; transition: color 0.3s ease;">info@urbaniawelfare.org</a></p>
+            </div>
+          </div>
+          
+          <div style="border-top: 1px solid #333; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+            <div style="margin-bottom: 15px;">
+              <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#4267B2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#E1306C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#1DA1F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px; transition: transform 0.3s ease, color 0.3s ease; display: inline-block;" onmouseover="this.style.color='#0077B5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='#fff'; this.style.transform='translateY(0)'" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <p style="color: #ccc; font-size: 14px; margin: 0;">© <span id="currentYear">2023</span> Urbania Welfare Community Center. All rights reserved.</p>
+          </div>
+          <button onclick="scrollToTop()" id="scrollTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: #333; color: white; border: none; outline: none; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#555'" onmouseout="this.style.backgroundColor='#333'"><i class="fa fa-arrow-up"></i></button>
+        </div>
+      </footer>
+  
+      <script>
+        // Update current year automatically
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Scroll to top functionality
+        let scrollTopBtn = document.getElementById("scrollTopBtn");
+        
+        window.onscroll = function() {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            scrollTopBtn.style.display = "block";
+          } else {
+            scrollTopBtn.style.display = "none";
+          }
+        };
+        
+        function scrollToTop() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }
+        
+        // Add hover effect to all footer links
+        const footerLinks = document.querySelectorAll('footer a');
+        footerLinks.forEach(link => {
+          link.addEventListener('mouseover', function() {
+            this.style.color = '#fff';
+          });
+          link.addEventListener('mouseout', function() {
+            this.style.color = '#ccc';
+          });
+        });
+      </script>
+      <!-- Second footer removed to fix duplicate -->
+      </div>
+    
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+      integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Razorpay Integration -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

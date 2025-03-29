@@ -1,0 +1,378 @@
+/* Registration Form Styling */
+.registration-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.registration-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.registration-header h1 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.registration-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.form-sidebar {
+  flex: 1;
+  min-width: 300px;
+  background: linear-gradient(135deg, #222, #444);
+  color: #fff;
+  padding: 40px 30px;
+}
+
+.registration-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-box {
+  display: flex;
+  gap: 15px;
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.info-content h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.info-content p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.info-content a {
+  color: #fff;
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+
+.info-content a:hover {
+  opacity: 0.8;
+}
+
+.registration-form {
+  flex: 2;
+  min-width: 500px;
+  padding: 40px;
+  position: relative;
+}
+
+.form-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.progress-connector {
+  height: 3px;
+  background-color: #e0e0e0;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.step-number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.step-text {
+  font-size: 0.9rem;
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+.progress-step.active .step-number {
+  background-color: #222;
+  color: #fff;
+}
+
+.progress-step.active .step-text {
+  color: #222;
+  font-weight: 600;
+}
+
+.progress-step.completed .step-number {
+  background-color: #222;
+  color: #fff;
+}
+
+.form-page {
+  display: none;
+}
+
+.form-page.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-page h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #222;
+  outline: none;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+.invalid-group {
+  border-color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #222;
+}
+
+.checkbox-item label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.checkbox-single {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkbox-single input[type="checkbox"] {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: #222;
+}
+
+.checkbox-single label {
+  margin-bottom: 0;
+  font-weight: normal;
+  flex: 1;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.prev-btn,
+.next-btn,
+.submit-btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.prev-btn {
+  background-color: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.prev-btn:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.next-btn,
+.submit-btn {
+  background-color: #222;
+  color: #fff;
+  border: none;
+}
+
+.next-btn:hover,
+.submit-btn:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+.submit-btn {
+  padding: 15px 30px;
+  background-color: #222;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+  .form-wrapper {
+    flex-direction: column;
+  }
+  
+  .form-sidebar {
+    min-width: 100%;
+    padding: 30px;
+  }
+  
+  .registration-form {
+    min-width: 100%;
+    padding: 30px;
+  }
+  
+  .form-progress {
+    padding: 0 10px;
+  }
+  
+  .step-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .registration-header h1 {
+    font-size: 2rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-page h2 {
+    font-size: 1.5rem;
+  }
+  
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .step-text {
+    display: none;
+  }
+}
